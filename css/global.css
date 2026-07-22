@@ -1,0 +1,17 @@
+:root {
+  --red: #C74E84;
+  --yellow: #D7BA59;
+  --blue: #3E94B3;
+  --white: #ECE6E4;
+  --light-gray: #C7BBBE;
+  --dark-gray: #4F4B55;
+  --black: #35303B;
+}
+img { width: 100%; height: auto; }
+html {
+  background-color: var(--white); color: var(--black);
+  font-family: Arial, sans-serif;
+  margin: 0; padding: 0;
+}
+
+body { margin: 0; padding: 0; }

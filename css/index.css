@@ -1,0 +1,14 @@
+header {
+  #header-hue {
+    width: 20rem; height: 20rem; border-radius: 12rem; position: relative;
+    background-image: conic-gradient(red, magenta, blue, aqua, lime, yellow, red);
+    &::before {
+      width: 20rem; height: 20rem; display: block; content: ""; border-radius: 12rem;
+      background-image: radial-gradient(circle closest-side, white, transparent);
+    }
+    img {
+      width: 6rem;
+      position: absolute; top: -26.5%; left: 25%;
+    }
+  }
+}
