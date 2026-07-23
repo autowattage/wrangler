@@ -1,33 +1,60 @@
+h1 { margin: 0; }
 header {
-  display: flex; flex-direction: column; gap: 1rem; 
+  display: flex; flex-direction: column-reverse;
+  padding: 1rem 1rem 0;
   details {
     background-color: var(--dark-gray); border-radius: 0.5rem;
-    display: flex; flex-direction: column;
     summary {
-      padding: 0.25rem 1rem; background-color: var(--blue);
+      background-color: var(--blue); padding: 0.25rem .5rem;
       border-radius: 0.5rem;
     }
-    input, #colorpicker { cursor: pointer; }
-    >*:not(summary) { display: block; margin: 0 0.5rem; }
-  }
-  details[open] {
-    gap: 0.5rem; padding-bottom: 0.5rem;
-    summary { border-radius: 0.5rem 0.5rem 0 0; }
-  }
-  details:nth-of-type(2) { summary { background-color: var(--red); }}
-  details:nth-of-type(3) { summary { background-color: var(--yellow); color: var(--black); }}
-  details:last-of-type {
-    position: relative;
-    div {
-      width: 40%; height: auto; aspect-ratio: 1/1; border-radius: 12rem;
-      background-image: conic-gradient(red, magenta, blue, aqua, lime, yellow, red);
-      &::before {
-        width: 100%; height: auto; aspect-ratio: 1/1; display: block; content: ""; border-radius: 12rem;
-        background-image: radial-gradient(circle closest-side, white, transparent);
+    &[open] summary { border-radius: 0.5rem 0.5rem 0 0;}
+    >span, label>span:first-child {
+      display: block; padding: 0.5rem 0.75rem;
+      position: relative;
+      &::after {
+        content:""; display: block;
+        width: 0.75rem; height: 0.75rem;
+        border-radius: 1rem; background-color: var(--yellow);
+        position: absolute; left: -0.4rem; top: 0.75rem;
       }
     }
-    img {
-      width: 4rem;
-      position: absolute; top: -3.65rem; right: 20%;
+  }
+  #node-img span:last-of-type::after,
+  #node-hsl label>span:first-child::after {
+    background-color: var(--light-gray);
+  }
+  #node-img {
+    summary { background-color: var(--red);}
+    span {
+        text-align: right;
+        &::after { left:auto; right: -0.4rem; }
     }
+  }
+  #node-hsl {
+    summary { background-color: var(--yellow); color: var(--black);}
+    >span::before {
+      content:""; display: block;
+      width: 0.75rem; height: 0.75rem;
+      border-radius: 1rem; background-color: var(--yellow);
+      position: absolute; right: -0.4rem; top: 0.75rem;
+    }
+  }
 }
+
+/* Big mobile */
+@media screen and (min-width: 25rem) {
+  header { padding: 1rem 2rem 0; max-width: 30rem; margin: auto; }
+}
+/* Tablet */
+@media screen and (min-width: 40rem) {
+  header {
+    flex-direction: row; gap: 1rem; max-width: 100%; padding: 2rem 2rem 0;
+    >div:first-child {
+      flex-basis: 30%; min-width: 13rem; max-width: 20rem;
+      flex-shrink: 0; flex-grow: 0;
+    }
+  }
+}
+/* Desktop */
+@media screen and (min-width: 67rem) { }
