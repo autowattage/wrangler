@@ -1,14 +1,33 @@
 header {
-  #header-hue {
-    width: 20rem; height: 20rem; border-radius: 12rem; position: relative;
-    background-image: conic-gradient(red, magenta, blue, aqua, lime, yellow, red);
-    &::before {
-      width: 20rem; height: 20rem; display: block; content: ""; border-radius: 12rem;
-      background-image: radial-gradient(circle closest-side, white, transparent);
+  display: flex; flex-direction: column; gap: 1rem; 
+  details {
+    background-color: var(--dark-gray); border-radius: 0.5rem;
+    display: flex; flex-direction: column;
+    summary {
+      padding: 0.25rem 1rem; background-color: var(--blue);
+      border-radius: 0.5rem;
+    }
+    input, #colorpicker { cursor: pointer; }
+    >*:not(summary) { display: block; margin: 0 0.5rem; }
+  }
+  details[open] {
+    gap: 0.5rem; padding-bottom: 0.5rem;
+    summary { border-radius: 0.5rem 0.5rem 0 0; }
+  }
+  details:nth-of-type(2) { summary { background-color: var(--red); }}
+  details:nth-of-type(3) { summary { background-color: var(--yellow); color: var(--black); }}
+  details:last-of-type {
+    position: relative;
+    div {
+      width: 40%; height: auto; aspect-ratio: 1/1; border-radius: 12rem;
+      background-image: conic-gradient(red, magenta, blue, aqua, lime, yellow, red);
+      &::before {
+        width: 100%; height: auto; aspect-ratio: 1/1; display: block; content: ""; border-radius: 12rem;
+        background-image: radial-gradient(circle closest-side, white, transparent);
+      }
     }
     img {
-      width: 6rem;
-      position: absolute; top: -26.5%; left: 25%;
+      width: 4rem;
+      position: absolute; top: -3.65rem; right: 20%;
     }
-  }
 }

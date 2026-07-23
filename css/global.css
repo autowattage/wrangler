@@ -2,14 +2,17 @@
   --red: #C74E84;
   --yellow: #D7BA59;
   --blue: #3E94B3;
+  --dark-blue: #3F7DAC;
   --white: #ECE6E4;
   --light-gray: #C7BBBE;
   --dark-gray: #4F4B55;
   --black: #35303B;
 }
 img { width: 100%; height: auto; }
+a { color: var(--blue); }
+
 html {
-  background-color: var(--white); color: var(--black);
+  background-color: var(--black); color: var(--white);
   font-family: Arial, sans-serif;
   margin: 0; padding: 0;
 }

@@ -7,23 +7,33 @@
     <title>Index | Wrangler</title>
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/te-slider.css">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
   </head>
 
   <body>
     <header>
       <p>make an art software plugin,</p>
-      <h1><img src="./img/logo-black.png" alt="Wrangler logo"><img src="./img/bunnyguy.png" alt="By Nick/Bunnyguy"></h1>
-      <aside id="header-hue">
-        <img src="./img/chillin.png" alt="Adaptor-shaped character sits on a ledge">
-      </aside>
-      <aside>
-        <input type="range" min="0" max="20">
-      </aside>
-      <aside>
-        <input type="range" min="0" max="20">
-      </aside>
+      <details open>
+        <summary>Image Texture</summary>
+        <h1><img src="./img/logo-white.png" alt="Wrangler logo"></h1>
+      </details>
+      <details open>
+        <summary>Saturation</summary>
+        <input type="range" min="0" max="100" class="te-slider slider-progress">
+      </details>
+      <details open>
+        <summary>Light</summary>
+        <input type="range" min="0" max="100" class="te-slider slider-progress">
+      </details>
+      <details open>
+        <summary>Color Picker</summary>
+        <div id="colorpicker"></div>
+        <img src="./img/chillin.png" onmouseover="this.src='./img/chillin-active.png';" onmouseleave="this.src='./img/chillin.png';" alt="Adaptor-shaped character sits on a ledge">
+      </details>
       <p>get free art supplies</p>
+      <img src="./img/bunnyguy.png" alt="By Nick/Bunnyguy">
+      <script src="./js/te-slider.js"></script>
     </header>
 
     <main>
