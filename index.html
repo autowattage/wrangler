@@ -15,13 +15,17 @@
     <header>
       <div>
         <p>make an art software plugin, get free art supplies</p>
-        <details open id="node-img">
+        <details id="node-img">
           <summary>Image</summary>
           <span>Image</span>
           <span>Alpha</span>
-          <p>wrangler.png</p>
+          <p>
+            <button type="button"><img src="./img/gallery-open.png" alt="Select photo"</img></button>
+            <span>wrangler.png</span>
+            <button type="button"><img src="./img/gallery-close.png" alt="Clear photo"</img></button>
+          </p>
         </details>
-        <details open id="node-hsl">
+        <details id="node-hsl">
           <summary>HSL Adjustment</summary>
           <span>Image</span>
           <label><span>Hue</span><input type="range" min="0" max="100"><span></span></label>
@@ -43,7 +47,7 @@
     <main>
       <!-- How it WOrks -->
       <!-- Ideas section -->
-      <section>
+      <section id="ideas">
         <h2>you could make...</h2>
         <div>
           <figure>
@@ -64,7 +68,7 @@
       <!-- Prizes section -->
       <!-- Requirements section -->
       <!-- faq -->
-      <section>
+      <section id="faq">
         <h2>FAQ</h2>
         <details>
           <summary>Can I participate?</summary>

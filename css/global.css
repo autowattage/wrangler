@@ -5,11 +5,16 @@
   --dark-blue: #3F7DAC;
   --white: #ECE6E4;
   --light-gray: #C7BBBE;
+  --gray: #8C848C;
   --dark-gray: #4F4B55;
   --black: #35303B;
 }
 img { width: 100%; height: auto; }
-a { color: var(--blue); }
+a {
+  color: var(--blue); text-decoration-style:wavy;
+  padding: .1rem .25rem; border-radius: .25rem;
+  }
+a:hover { color: var(--black); background-color: var(--blue); }
 
 html {
   background-color: var(--black); color: var(--white);
