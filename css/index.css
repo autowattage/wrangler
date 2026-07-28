@@ -9,7 +9,7 @@ header {
       b {
         padding: 0.1rem 0.25rem; margin: .25rem 0; border-radius: .25rem; display: inline-block;
         background-color: var(--yellow); color: var(--black);
-        &:last-of-type { background-color: var(--red); }
+        &:last-of-type { color: var(--white); background-color: var(--red); }
       }
     }
   }
@@ -122,15 +122,12 @@ main {
       }
       >p:first-of-type::after { left: auto; right: -0.4rem;}
       &:first-of-type>p::before { display: none; }
-      /* &:nth-of-type(2) { left: 3%; span { color: var(--black); background-color: var(--yellow);} } */
-      /* &:nth-of-type(3) { left: 6%; span { background-color: var(--blue);} } */
-      /* &:last-of-type { left: 10%; span::after { display: none}; } */
     }
   }
 }
 
 footer {
-  background-color: var(--dark-gray);
+  background-color: color-mix(in srgb, var(--dark-gray), transparent 50%);
   background-image: url("../img/grid-light.png"); background-size: 0.75rem 0.75rem;
   padding: 1rem 1rem 5rem;
 }

@@ -1,8 +1,11 @@
 :root {
-  --red: #C74E84;
+  --red: #B03976;
+  --red-unsafe: #C74E84;
   --yellow: #D7BA59;
-  --blue: #3E94B3;
-  --dark-blue: #3F7DAC;
+  --blue: #366896;
+  --light-blue: #6BC9EB;
+  --dark-blue: #2A4A7C;
+  --blue-unsafe: #3E94B3;
   --white: #ECE6E4;
   --light-gray: #C7BBBE;
   --gray: #8C848C;
@@ -11,10 +14,10 @@
 }
 img { width: 100%; height: auto; }
 a {
-  display: inline-block; color: var(--blue); text-decoration-style:wavy;
+  display: inline-block; color: var(--light-blue); text-decoration-style:wavy;
   padding: .1rem .25rem; border-radius: .25rem;
 }
-a:hover { color: var(--black); background-color: var(--blue); }
+a:hover { color: var(--white); background-color: var(--blue); }
 p { margin: 0; padding: 0.5rem 0;}
 p:first-of-type { padding-top: 0;}
 p:last-of-type { padding-bottom: 0;}
