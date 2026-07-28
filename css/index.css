@@ -78,7 +78,7 @@ header {
     position: relative;
     >img {
       position: absolute; right: 2.5rem; top: -3rem;
-      width: 3.5rem; height: auto;
+      width: 3.5rem; height: auto; cursor: pointer;
     }
     >a {
       position: absolute; right: 6rem; top: -3rem;
@@ -132,7 +132,7 @@ main {
 footer {
   background-color: var(--dark-gray);
   background-image: url("../img/grid-light.png"); background-size: 0.75rem 0.75rem;
-  padding: 1rem;
+  padding: 1rem 1rem 5rem;
 }
 /* Big mobile */
 @media screen and (min-width: 25rem) {
@@ -152,7 +152,7 @@ footer {
       &:last-of-type { left: calc(100% - min(80%, 30rem)); span::after { display: none}; }
     }
   }
-  footer { padding: 2rem;}
+  footer { padding: 2rem 2rem 5rem;}
 }
 /* Tablet */
 @media screen and (min-width: 40rem) {
@@ -172,10 +172,7 @@ footer {
   }
   main {
     margin: auto; padding: 2rem; max-width: 45rem;
-    #flow {
-      width: 80%; margin: auto;
-      details { width: min(80%, 40rem); }
-    }
+    #flow { width: 90%; margin: auto; details { width: min(90%, 30rem); } }
     #faq {
       flex-wrap: wrap; flex-direction: row; gap: 0.75rem;
       details { width: 40%; flex-grow: 1; }
@@ -186,6 +183,9 @@ footer {
 /* Desktop */
 @media screen and (min-width: 67rem) {
   header { max-width: 60rem; }
-  main { max-width: 60rem; }
-  main #faq details { width: 30%; }
+  main {
+    max-width: 60rem;
+    #flow { width: 80%; details { width: min(80%, 30rem); } }
+    #faq details { width: 30%; }
+  }
 }

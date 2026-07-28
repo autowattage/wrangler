@@ -19,6 +19,7 @@ p { margin: 0; padding: 0.5rem 0;}
 p:first-of-type { padding-top: 0;}
 p:last-of-type { padding-bottom: 0;}
 h2 { text-align:center; font-size: 1.75rem; margin: .5rem 0;}
+summary { cursor: pointer; }
 html {
   background-color: var(--black); color: var(--white);
   background-image: url("../img/grid.png");
@@ -26,8 +27,45 @@ html {
   font-family: Arial, sans-serif;
   margin: 0; padding: 0;
 }
-
 body { margin: 0; padding: 0; }
+
+#navbar {
+  background-color: var(--dark-gray); padding: 0.5rem; height: 4rem;
+  position: fixed; bottom: 0; left: 0; width: 100%; box-sizing: border-box;
+  display: flex; flex-direction: row-reverse; justify-content: space-between;
+  >div {
+    text-align: right;
+    &::after {
+      content:""; display: block;
+      width: 1.75rem; height: 1.75rem;
+      position: absolute; right: 1.125rem; top: 1.45rem;
+      background-image: url("../img/faces/default.png");
+      background-size: 1.75rem 1.75rem;
+    }
+    img { height: 100%; width: auto; position: relative; }
+  }
+  details {
+    align-content: center;
+    summary {
+      list-style-type: none; height: 100%; aspect-ratio: 1/1;
+      &::-webkit-details-marker { display: none; }
+    }
+    ul {
+      position: absolute; box-sizing: border-box;
+      bottom: 4rem; left: 0;
+      margin: 0; padding: 0.5rem; width: 100%;
+      background-color: var(--dark-gray);
+      li>a {
+        display: flex; gap: 0.5rem; align-items: center;
+        img {
+          height: 2rem; width: auto;
+          filter: brightness(0) saturate(100%) invert(85%) sepia(1%) saturate(1301%) hue-rotate(294deg) brightness(95%) contrast(79%);
+        }
+      }
+      li:hover img { filter: none; }
+    }
+  }
+}
 
 /* Big mobile */
 @media screen and (min-width: 25rem) {
