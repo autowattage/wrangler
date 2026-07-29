@@ -1,8 +1,71 @@
+body {
+  display: flex; flex-direction: column; gap: 1rem;
+  min-height: 100vh;
+  >nav {
+    background-color: color-mix(in srgb, var(--dark-gray), var(--black) 25%);
+    background-image: url("/img/grid-light.png");
+    background-size: 0.75rem 0.75rem;
+    height: 4rem; width: 100%;
+    position: fixed; top: 0; left: 0;
+    >div { height: 100%; width: 100%;}
+    >div>div {
+      height: 100%; display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem; box-sizing: border-box;
+      >button, >a {
+        height: 100%; cursor: pointer;
+        border: 0; background-color: transparent !important;
+      }
+      img { height: 100%; width: auto; }
+    }
+    >div>ul {
+      margin: 0; padding: 0 1rem 1rem;
+      background-color: color-mix(in srgb, var(--dark-gray), var(--black) 25%);
+      background-image: url("/img/grid-light.png");
+      background-size: 0.75rem 0.75rem;
+      list-style: none; gap: 0.5rem;
+      flex-direction: column;
+      a:before { content: ">"; display: inline-block; margin-right: .25rem;}
+      a { padding: 0.5rem 1rem 0.5rem 0.5rem; width: 100%; box-sizing: border-box; }
+    }
+  }
+}
+main {
+  padding: 4rem 1rem 1rem;
+}
 /* Big mobile */
 @media screen and (min-width: 25rem) {
+  body>nav>div>div { padding: 0.5rem 1.5rem; }
+  main {
+    padding: 4rem 2rem 1rem;
+  }
 }
 /* Tablet */
 @media screen and (min-width: 40rem) {
+  body {
+    flex-direction: row; gap: 0;
+    >nav {
+      all:unset; padding: 2rem 1rem 1rem;
+      background-color: color-mix(in srgb, var(--dark-gray), var(--black) 25%);
+      background-image: url("/img/grid-light.png");
+      background-size: 0.75rem 0.75rem;
+      width: 20%; flex-shrink: 0; max-width: 12rem;
+      >div { position: sticky; top: 2rem; height: auto;}
+      >div>div {
+        flex-direction: column;
+        height: auto; padding: 0;
+        button { display: none; }
+        img { width: 100%; height: auto; max-width: 10rem;}
+        a { height: auto; }
+      }
+      >div>ul {
+        display: flex !important; padding: 0; margin-top: 1rem;
+      }
+    }
+    main {
+      width: auto; padding: 1rem;
+    }
+  }
 }
 /* Desktop */
 @media screen and (min-width: 67rem) {

@@ -12,15 +12,19 @@
   </head>
 
   <body>
-    <nav>
-      <button type="button"><img src="/img/menu.png" alt="Menu"></button>
-      <ul>
+    <nav id="menu"><div>
+      <div>
+        <button type="button"><img src="/img/menu.png" alt="Menu"></button>
+        <a href="#"><img src="/img/favicon.png" onmouseover="this.src='/img/favicon-yellow.png';" onmouseleave="this.src='/img/favicon.png';" onmousedown="this.src='/img/favicon-red.png';" onmouseup="this.src='/img/favicon-yellow.png';" alt="An adaptor-shaped character smiles at the screen"></a>
+      </div>
+      <ul style="display:none;">
         <li><a href="/docs/">Overview</a></li>
         <li><a href="/docs/krita.html">Krita</a></li>
         <li><a href="/docs/blender.html">Blender</a></li>
         <li><a href="/docs/aseprite.html">Aseprite</a></li>
       </ul>
-    </nav>
+      <script src="/js/docs.js"></script>
+    </div></nav>
     <main>
       <h1>Wrangler Docs</h1>
       <p>Howdy! Drawing digitally has many benefits, such as being able to install custom plugins. If you've ever wanted to make your own plugin and customize your software, this is the place to be!</p>
