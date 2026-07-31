@@ -141,7 +141,7 @@ main {
 }
 
 footer {
-  background-color: color-mix(in srgb, var(--dark-gray), transparent 50%);
+  background-color: color-mix(in srgb, var(--dark-gray), var(--black) 50%);
   background-image: url("../img/grid-light.png"); background-size: 0.75rem 0.75rem;
   padding: 1rem;
 }
