@@ -1,6 +1,9 @@
 body {
   display: flex; flex-direction: column; gap: 1rem;
   padding-top: 1rem;
+  >figure {
+    margin: 0 auto; padding: 0 1rem; max-width: 20rem;
+  }
 }
 header {
   text-align: center; margin-bottom: 1rem;
@@ -33,17 +36,20 @@ footer {
 /* Big mobile */
 @media screen and (min-width: 25rem) {
   body { gap: 2rem; padding-top: 2rem;}
+  body>figure { padding: 0 2rem; max-width: 25rem; }
   header h1 { font-size: 2.75rem; }
   details { margin: 0 2rem; >div { padding: 2rem; }}
   footer { padding: 2rem; margin-top: 2rem;}
 }
 /* Tablet */
 @media screen and (min-width: 40rem) {
+  body>figure { max-width: 28rem; }
   header h1 { font-size: 3rem; }
   details { width: 75%; max-width: 40rem;  margin: 0 auto; summary { padding: 1rem 1.5rem; }}
 }
 /* Desktop */
 @media screen and (min-width: 67rem) {
+  body>figure { max-width: 35rem; }
   header h1 { font-size: 3.5rem; }
   details { max-width: 50rem;  margin: 0 auto; }
 }
