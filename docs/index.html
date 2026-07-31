@@ -29,23 +29,36 @@
       <h1>Wrangler Docs</h1>
       <p>Howdy! Drawing digitally has many benefits, such as being able to install custom plugins. If you've ever wanted to make your own plugin and customize your software, this is the place to be!</p>
       <p>To navigate this website, use the left-side bar (or the top menu button for mobile users).</p> 
+      <h2>Beginner guides</h2>
       <p>Finished software guides:</p>
+      <p>Incomplete software guides, information may be inaccurate:</p>
       <ul>
         <li><a href="/docs/krita.html">Krita</a>: Python</li>
-      </ul>
-      <p>Unfinished software guides: information may be inaccurate:</p>
-      <ul>
-        <li><a href="/docs/krita-c.html">Krita</a>: C++</li>
-        <li><a href="/docs/gimp.html">GIMP</a>: C, <a href="https://developer.gimp.org/resource/writing-a-plug-in/">Official documentation</a></li>
         <li><a href="/docs/blender.html">Blender</a>: Python</li>
         <li><a href="/docs/aseprite.html">Aseprite</a>: Lua</li>
       </ul>
-      <p>For other software, here's a list of resources that'll help you get started:</p>
-      <ul>
-        <li>Firealpaca, Medibang Paint: does not have plugins, but uses <a href="https://fpacatuto.tumblr.com/post/145512145357/making-brush-scripts-part-1">Brush script (.bs) files</a></li>
-        <li>Adobe Animate: <a href="https://developer.adobe.com/photoshop/uxp/2022/guides/getting-started/creating-your-first-plugin/">Quickstart Guide</a>, <a href="https://developer.adobe.com/photoshop/uxp/2022/guides/devtool/">UXP Developer Tool (UDT)</a></li>
-        <li>Music software: <a href="https://github.com/juce-framework/JUCE">JUCE framework</a></li>
-      </ul>
+      <h2>Resources</h2>
+      <h3>Krita</h3>
+      <p>You can code a Krita extension in both Python and C++. Making a Krita plugin in Python is much easier than C++, but because Krita is built on top of C++ software, you'll have to do a bit of translating between the two languages.</p>
+      <p>Python Resources: <a href="https://scripting.krita.org/">Krita Scripting School</a>, <a href="https://doc.qt.io/qtforpython-6/">PyQt Documentation</a></p>
+      <p>C++ Resources: <a href="https://api.kde.org/legacy/krita/html/index.html">Krita API Reference</a>, <a href="https://doc.qt.io/">Qt Documentation</a></p>
+      <h3>Blender</h3>
+      <p>Blender's plugins are made in Python. There is extensive programming documentation in the <a href="https://docs.blender.org/manual/en/latest/advanced/index.html">Advanced Blender Manual</a>.</p>
+      <p>Before you start programming with Blender, make sure to <a href="https://docs.blender.org/manual/en/latest/advanced/command_line/index.html">run Blender in the command line</a>. Then you can move onto the tutorials for making an <a href="https://docs.blender.org/manual/en/latest/advanced/scripting/addon_tutorial.html">addon</a> and <a href="https://docs.blender.org/manual/en/latest/advanced/extensions/index.html">extension</a>.</p>
+      <h3>Aseprite</h3>
+      <p>Lua is the programming language of Aseprite <a href="https://www.aseprite.org/docs/scripting/">scripts</a> and <a href="https://www.aseprite.org/docs/extensions/">extensions</a>.</p>
+      <h3>Adobe (Photoshop, Animate, etc)</h3>
+      <p>Adobe uses HTML, CSS, and Javascript via the <a href="https://developer.adobe.com/photoshop/uxp/2022/">UXP</a> (Unified Extensibility Platform) to make plugins and scripts for Adobe software. To use UXP, you'll need to install the <a href="https://developer.adobe.com/photoshop/uxp/2022/guides/devtool/">UXP Developer Tool (UDT)</a>.</p>
+      <p>Adobe has some introductory guides for making <a href="https://developer.adobe.com/photoshop/uxp/2022/guides/">plugins</a> and <a href="https://developer.adobe.com/photoshop/uxp/2022/scripting/">scripts</a> with UDT. Their <a href="https://github.com/AdobeDocs">Github</a> contains lots of API documentation too!</p>
+      <p>Previously, a programming language called <a href="https://extendscript.docsforadobe.dev/introduction/extendscript-overview/">Extendscript</a> was used to make plugins and scripts, but it uses legacy Javascript software and is somewhat outdated.</p>
+      <h3>Firealpaca, Medibang Paint</h3>
+      <p>Firealpaca and Medibang Paint do not have plugins, but do have <a href="https://fpacatuto.tumblr.com/post/145512145357/making-brush-scripts-part-1">"Brush script (.bs) files"</a> that run continuously.</p>
+      <h3>GIMP</h3>
+      <p>GIMP Plugins are made in C. They have a full <a href="https://developer.gimp.org/resource/writing-a-plug-in/">tutorial</a> on their <a href="https://developer.gimp.org/">development website</a>.</p>
+      <h3>Audacity</h3>
+      <p>Audacity <a href="https://plugins.audacityteam.org/contributing/developing-your-own-plugins-and-scripts">plugins and scripts</a> can be made in a variety of programming languages like C, C++, Lisp, and Python.</p>
+      <!-- <li>Music software: <a href="https://github.com/juce-framework/JUCE">JUCE framework</a></li> -->
+      <!-- </ul> -->
     </main>
   </body>
 </html>

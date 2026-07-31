@@ -1,3 +1,9 @@
+h1, h2 { font-size: 2.5rem; text-align: center; color: var(--blue); margin: 2rem 0; }
+h2 { margin: 1.5rem auto; font-size: 2rem; color: var(--yellow);}
+h3, h4, h5, h6 { font-size: 1.75rem; margin: 0.5rem 0; color: var(--light-red); }
+h4 { font-size: 1.5rem; color: var(--blue); }
+h5 { font-size: 1.25rem; color: var(--yellow);}
+h6 { font-size: 1rem; }
 body {
   display: flex; flex-direction: column; gap: 1rem;
   min-height: 100vh;
@@ -42,6 +48,7 @@ main {
 }
 /* Tablet */
 @media screen and (min-width: 40rem) {
+  h1, h2 { text-align: left;}
   body {
     flex-direction: row; gap: 0;
     >nav {
@@ -63,10 +70,14 @@ main {
       }
     }
     main {
-      width: auto; padding: 1rem;
+      width: auto; padding: 1rem; padding-right: 10%;
     }
   }
 }
 /* Desktop */
 @media screen and (min-width: 67rem) {
+  body {
+    gap: 1rem;
+    main {padding-right: 25%;}
+  }
 }
