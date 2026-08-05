@@ -4,6 +4,7 @@ h3, h4, h5, h6 { font-size: 1.75rem; margin: 0.5rem 0; color: var(--light-red); 
 h4 { font-size: 1.5rem; color: var(--blue); }
 h5 { font-size: 1.25rem; color: var(--yellow);}
 h6 { font-size: 1rem; }
+#footnote { margin-top: 3rem; }
 body {
   display: flex; flex-direction: column; gap: 1rem;
   min-height: 100vh;
