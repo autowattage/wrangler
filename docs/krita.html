@@ -55,18 +55,23 @@
       <code>myDoc = Krita.instance().createDocument(int width, int height, QString name, QString colorModel, QString colorDepth, QString profile)<br>
             Krita.instance().activeWindow().addView(myDoc)</code>
       <h3 id="h3-actions">Actions</h3>
-      <p>Actions are simple, pre-defined instructions that can be immediately executed. All of the main menu options are actions.</p>
-      <p>To make your own action, make a QAction from the PyQt library and connect its trigger to a function:</p>
+      <p>The most basic way for users to interact with Krita are actions. Actions are simple, pre-defined instructions that can be immediately executed. For example, all of the main menu buttons are actions.</p>
+      <p>There are 2 parts of an action:</p>
+      <ul>
+        <li><strong>Signals</strong> are sent out when the user interacts with it (ie. Button pressed).</li>
+        <li><strong>Slots</strong>, the code that runs when a signal is sent out.</li>
+      </ul>
+      <p>When an action is activated, it sends out a 'clicked' signal, which is <strong>connected</strong> to a slot.</p>
+      <p>To make your own action, make a QAction from the PyQt library (Krita's GUI framework) and connect its trigger to a function:</p>
       <code>from PyQt5.QtWidgets import QAction<br><br>
             def myfunc():<br>
             &emsp;&emsp;print("hello from myfunc")<br><br>
             myaction = QAction("run my custom action")<br>
             myaction.triggered.connect(myfunc)<br>
-            myaction.trigger()
+            myaction.trigger() #if you want to see an immediate result
       </code>
-            
-      <h3 id="h3-signals">Signals</h3>
-      <p>Currently a work-in-progress.</p>
+      <h3 id="h3-gui">The GUI</h3>
+      <p>Buttons are merely actions with a GUI layer on top.</p>
       <h2 id="h2-plugins">Intro to plugins</h2>
       <p>Krita plugins are a folder of Krita scripts that execute when Krita first loads.</p>
       <h2 id="h2-rsrcs">Resources</h2>
@@ -85,6 +90,10 @@
         <li><a href="#">Making a Krita plugin</a></li>
         <li><ul>
           <li><a href="#h2-scripts">Intro to scripts</a></li>
+          <li><ul>
+            <li><a href="#h3-actions">Actions</a></li>
+            <li><a href="#h3-gui">The GUI</a></li>
+          </ul></li>
           <li><a href="#h2-plugins">Intro to plugins</a></li>
           <li><a href="#h2-rsrcs">Resources</a></li>
         </ul></li>
