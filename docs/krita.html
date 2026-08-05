@@ -37,7 +37,7 @@
       <p>Navigate to Settings 🡲 Configure Krita 🡲 Python Plugin Manager and enable the Scripter button. Then navigate to Tools 🡲 Scripts 🡲 Scripter to open the Scripter tab: this is a sandbox where you can run, edit, and save scripts. I encourage you to follow along the rest of this guide with the Scripter tab.</p>
       <p>Type <code>print("Hello world!")</code> into the text editor and hit the run button. In the console below, you'll get an output that says <i>Hello World!</i>.</p>
 
-      <h2>Intro to scripts</h2>
+      <h2 id="h2-scripts">Intro to scripts</h2>
       <p>A Krita script is simply a Python file that changes Krita's behavior while it's running. To access Krita's internal workings, we'll use its API, which acts like an interface between Krita and our script. Any instruction we want to execute can be found in the <code>krita</code> library's API.</p>
       <p>Go ahead and import all of the contents of the <code>krita</code> library into your script:</p>
       <code>from krita import *</code>
@@ -47,11 +47,28 @@
       <code>&lt;PyKrita.krita.Krita object at 0x7f9128e48ff0\&gt;</code>
       <p>What's happening here? <code>Krita.instance()</code> returned an object. Because Python is an object-oriented programming langauge (OOP), almost everything in Python is either an object or class. In our case, our <code>Krita.instance()</code> object is a child of the <code>Krita</code> class.</p>
       <p>There are a couple interesting functions in the <code>Krita</code> class: I'll take a look at one of the functions, <code>Krita.createDocument()</code>, but I encourage you to explore the <a href="https://api.kde.org/legacy/krita/html/classKrita.html">documentation</a> and see what other fun things you could print out!</p>
-      <p><code>Krita.createDocument()</code> has 7 parameters (input values), which match the options you can select when creating a new document in the GUI itself.</p>
+      <p><code>Krita.createDocument()</code> has 7 parameters (input values): 1 for the name of the document, and 6 of which match the options you can select when creating a new document in the GUI itself.</p>
       <img src="/img/docs/krita/newDocument.png" alt="Screenshot of Krita's option menu when creating a new document">
-
-
-      <h2>Intro to plugins</h2>
+      <p>For more information on what arguments to pass to the <code>Krita.newDocument()</code> function, navigate to <code>krita</code>'s <a href="https://api.kde.org/legacy/krita/html/classKrita.html">class</a> documentation and navigate to Public Slots 🡲 <code>createDocument()</code>. Go ahead an create a document with whichever arguments you'd like:</p>
+      <code>Krita.instance().createDocument(int width, int height, QString name, QString colorModel, QString colorDepth, QString profile)</code>
+      <p>Nothing happened, because a document, like <code>Krita.instance()</code>, is just an object. You'll have to assign your document to a variable, then add it to the view, which will show the document in the GUI.</p>
+      <code>myDoc = Krita.instance().createDocument(int width, int height, QString name, QString colorModel, QString colorDepth, QString profile)<br>
+            Krita.instance().activeWindow().addView(myDoc)</code>
+      <h3 id="h3-actions">Actions</h3>
+      <p>Actions are simple, pre-defined instructions that can be immediately executed. All of the main menu options are actions.</p>
+      <p>To make your own action, make a QAction from the PyQt library and connect its trigger to a function:</p>
+      <code>from PyQt5.QtWidgets import QAction<br><br>
+            def myfunc():<br>
+            &emsp;&emsp;print("hello from myfunc")<br><br>
+            myaction = QAction("run my custom action")<br>
+            myaction.triggered.connect(myfunc)<br>
+            myaction.trigger()
+      </code>
+            
+      <h3 id="h3-signals">Signals</h3>
+      <p>Currently a work-in-progress.</p>
+      <h2 id="h2-plugins">Intro to plugins</h2>
+      <p>Krita plugins are a folder of Krita scripts that execute when Krita first loads.</p>
       <h2 id="h2-rsrcs">Resources</h2>
       <ul>
         <li><a href="https://scripting.krita.org">Krita Scripting School</a>: An offical, introductory website for learning how to code with Krita.</li>
@@ -67,6 +84,8 @@
       <ul>
         <li><a href="#">Making a Krita plugin</a></li>
         <li><ul>
+          <li><a href="#h2-scripts">Intro to scripts</a></li>
+          <li><a href="#h2-plugins">Intro to plugins</a></li>
           <li><a href="#h2-rsrcs">Resources</a></li>
         </ul></li>
       <ul>

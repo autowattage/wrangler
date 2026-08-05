@@ -5,6 +5,13 @@ h4 { font-size: 1.5rem; color: var(--blue); }
 h5 { font-size: 1.25rem; color: var(--yellow);}
 h6 { font-size: 1rem; }
 #footnote { margin-top: 3rem; }
+img { width: 100%; max-width: 20rem; display: block; margin: auto; }
+code {
+  display: block; font-size: 1rem; color: var(--light-yellow);
+  background-color: var(--black); border: 2px solid var(--dark-gray);
+  margin: 0.5rem 0;
+}
+p>code { display: inline-block; margin: 0;}
 body {
   display: flex; flex-direction: column; gap: 1rem;
   min-height: 100vh;
@@ -77,6 +84,7 @@ main {
 }
 /* Big mobile */
 @media screen and (min-width: 35rem) {
+  img { max-width: 25rem; }
   body #menu>div>div {
     padding: 0.5rem 1.5rem;
     >div>a:first-child {
@@ -97,6 +105,7 @@ main {
 /* Tablet */
 @media screen and (min-width: 50rem) {
   h1, h2 { text-align: left;}
+  img { max-width: 30rem; }
   body {
     flex-direction: row; gap: 0;
     #menu {
@@ -140,6 +149,7 @@ main {
 }
 /* Desktop */
 @media screen and (min-width: 67rem) {
+  img { max-width: 35rem; }
   body {
     gap: 1rem;
     #menu {
