@@ -1,10 +1,66 @@
+body, section {
+  display: flex; flex-direction: column; gap: 1rem;
+  padding-top: 1rem;
+}
+h2 { display: block; width: 100%; font-size: 2rem; }
 
+header {
+  padding: 0 1rem;
+  details {
+    background-color: var(--dark-gray); border-radius: 1rem;
+    max-width: 25rem; margin: auto; 
+    summary {
+      background-color: var(--blue); color: var(--black);
+      padding: 0.25rem .5rem; border-radius: 0.5rem;
+    }
+    span {
+      padding-left: 1rem; position: relative;
+      &::before {
+        content:""; display: block;
+        width: 0.75rem; height: 0.75rem;
+        border-radius: 1rem; background-color: var(--yellow);
+        position: absolute; left: -0.4rem; top: 0.25rem;
+        box-shadow: -2px 0 var(--black), 0 2px var(--black), 2px 0 var(--black), 0 -2px var(--black);
+      }
+    }
+    h1 {
+      margin: 0; padding: 0.5rem; margin-right: 0.5rem;
+      a:hover { background-color: transparent;}
+    }
+  }
+  details[open] summary { border-radius: 0.5rem 0.5rem 0 0; margin-bottom: 0.5rem;}
+}
+
+main {
+  padding: 0 1rem;
+  section { padding: 0; flex-direction: row; flex-wrap: wrap; gap: 1rem;}
+  details {
+    flex-basis: 100%; flex-grow: 1; display: inline-block;
+    background-color: var(--dark-gray); border-radius: 1rem;
+    summary {
+      background-color: var(--blue); color: var(--black);
+      padding: 0.5rem 1rem; border-radius: 0.5rem;
+    }
+    figure { margin: 0 1rem 1rem;}
+    button {
+      width: 100%; background-color: var(--blue);
+      font-size: 1rem; margin-top: 0.5rem; cursor: pointer;
+      border: none; border-radius: 0.5rem; padding: 0.5rem 1rem;
+    }
+    img { max-height: 8rem;}
+  }
+  details[open] summary { border-radius: 0.5rem 0.5rem 0 0; margin-bottom: 1rem;}
+}
 /* Big mobile */
-@media screen and (min-width: 35rem) {
+@media screen and (min-width: 25rem) {
+  header { padding: 2rem 2rem 1rem; }
+  main details { flex: 0 0 calc(50% - 0.5rem); }
 }
 /* Tablet */
-@media screen and (min-width: 50rem) {
+@media screen and (min-width: 40rem) {
+  main details { flex: 0 0 calc(33% - 0.625rem); }
 }
 /* Desktop */
 @media screen and (min-width: 67rem) {
+  main details { flex: 0 0 calc(25% - 0.75rem); }
 }
