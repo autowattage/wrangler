@@ -91,15 +91,16 @@ header {
   #node-viewer {
     position: relative;
     >img {
-      position: absolute; right: 2.5rem; top: -3rem;
+      position: absolute; right: 5rem; top: -3rem;
       width: 3.5rem; height: auto; cursor: pointer;
     }
     >a {
-      position: absolute; right: 6rem; top: -3rem;
+      position: absolute; right: 8.5rem; top: -3rem;
       height: 2.5rem; width: auto;
       img { height: 100%; width: auto;}
     }
-    >a:hover { background-color: transparent; }
+    >a:last-child { right: 0;}
+    >a:hover { background-color: transparent; filter: brightness(0) saturate(100%) invert(100%) sepia(32%) saturate(4326%) hue-rotate(325deg) brightness(90%) contrast(85%); }
   }
 }
 main {
@@ -150,8 +151,9 @@ footer {
   header {
     margin: 5rem 2rem 0;
     #node-viewer {
-      >img { width: 4rem; top: -3.6rem; right: 15%;}
-      >a { right: calc(15% + 4rem); }
+      >img { width: 4rem; top: -3.6rem; right: calc(5% + 5rem);}
+      >a:last-of-type { right: 5%; }
+      >a:first-of-type { right: calc(5% + 9rem); }
     }
   }
   main {
@@ -177,8 +179,9 @@ footer {
     }
     >div:last-of-type { width: 100%; >a { margin-top: 0.5rem;}}
     #node-viewer {
-      >img { width: 4.25rem; top: -3.9rem; right: 18%;}
-      >a { right: calc(18% + 4rem); }
+      >img { width: 4.25rem; top: -3.9rem; right: calc(8% + 5rem);}
+      >a:last-of-type { right: 8%; }
+      >a:first-of-type { right: calc(8% + 9rem); }
     }
   }
   main {

@@ -7,7 +7,7 @@
     <title>Krita | Wrangler Docs</title>
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/docs.css">
-    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
   </head>
 
   <body>
@@ -49,7 +49,7 @@
       <p>There are a couple interesting functions in the <code>Krita</code> class: I'll take a look at one of the functions, <code>Krita.createDocument()</code>, but I encourage you to explore the <a href="https://api.kde.org/legacy/krita/html/classKrita.html">documentation</a> and see what other fun things you could print out!</p>
       <p><code>Krita.createDocument()</code> has 7 parameters (input values): 1 for the name of the document, and 6 of which match the options you can select when creating a new document in the GUI itself.</p>
       <img src="/img/docs/krita/newDocument.png" alt="Screenshot of Krita's option menu when creating a new document">
-      <p>For more information on what arguments to pass to the <code>Krita.newDocument()</code> function, navigate to <code>krita</code>'s <a href="https://api.kde.org/legacy/krita/html/classKrita.html">class</a> documentation and navigate to Public Slots 🡲 <code>createDocument()</code>. Go ahead and create a document with whichever arguments you'd like:</p>
+      <p>For more information on what arguments to pass to the <code>Krita.newDocument()</code> function, go to <code>krita</code>'s <a href="https://api.kde.org/legacy/krita/html/classKrita.html">class</a> documentation and navigate to Public Slots 🡲 <code>createDocument()</code>. Go ahead and create a document with whichever arguments you'd like:</p>
       <code>Krita.instance().createDocument(int width, int height, QString name, QString colorModel, QString colorDepth, QString profile)</code>
       <p>Nothing happened, because a document, like <code>Krita.instance()</code>, is just an object. You'll have to assign your document to a variable, then add it to the view, which will show the document in the GUI.</p>
       <code>myDoc = Krita.instance().createDocument(int width, int height, QString name, QString colorModel, QString colorDepth, QString profile)<br>
@@ -64,10 +64,9 @@
       <p>When an action is triggered, it sends out a signal, which is connected to a slot.</p>
       <p>Krita has a variety of actions that can be triggered in a script: the <a href="https://scripting.krita.org/action-dictionary">Action Dictionary</a> has a collection of actions avalible to you. Here's an example below:</p>
       <code>Krita.instance().action('help_about_app').trigger()</code>
-      <p>To make your own action, make a QAction from the PyQt library (Krita's GUI framework):</p>
+      <p>To make your own action, make a <code>QAction</code> from the PyQt library (Krita's GUI framework):</p>
       <code>from PyQt5.QtWidgets import QAction<br><br>
-            myaction = QAction("run my custom action")<br>
-      </code>
+            myaction = QAction("run my custom action")</code>
       <p>and connect its signal to a slot:</p>
       <code>def myfunc():<br>
             &emsp;&emsp;print("hello from myfunc")<br><br>
@@ -75,27 +74,63 @@
       </code>
 
       <h3 id="h3-gui">The GUI</h3>
-      <p>Krita uses a framework called <a href="https://doc.qt.io/">Qt</a> (PyQt for python) to display graphics. Qt's API contains multiple modules for different purposes, the most common being QtCore (for non-GUI components), QtGui (for GUI windows, events, etc), and QtWidget (for GUI components like buttons).</p>
-      <p>We'll make a simple pop-up that can be accessed from the main menu. First, import PyQt and its modules.</p>
+      <p>Krita uses a framework called <a href="https://doc.qt.io/">Qt</a> (aka <a href="https://doc.qt.io/qtforpython-6/">PyQt</a>in Python) to display graphics. We'll make a simple pop-up that can be accessed from the main menu. First, import<a href="#footnote-1">[1]</a> PyQt and some of its modules so we can modify Krita's GUI.</p>
       <code>from PyQt5.QtCore import *<br>
             from PyQt5.QtGui import *<br>
             from PyQt5.QtWidgets import *
       </code>
-      <p>Then add a menu:</p>
-      <code>mainMenu = Krita.instance().activeWindow().qwindow().menuBar()</code>
-      <code>mainMenu.addMenu("my custom menu")</code>
-      <p>Finally, add a 
-      <p>Buttons are merely actions with a GUI layer on top.</p>
+      <p>Qt's API contains multiple modules for different purposes, the most common being QtCore (for non-GUI components), QtGui (for GUI windows, events, etc), and QtWidget (for GUI components like buttons).</p>
+      <p>To make the pop-up window, we need to make a <code>QDialog</code> object (and optionally name it):</p>
+      <code>mypopup = QDialog()<br>
+            mypopup.setWindowTitle("my awesome popup")</code>
+      <p><code>QDialog</code>s need a <code>QLayout</code> to determine the position of widgets inside its window. A common layout is <code>QVBoxLayout</code>, which is used to vertically position widgets.</p>
+      <p>Go ahead and <a href="https://doc.qt.io/qt-6/qvboxlayout.html">create</a> a <code>QVBoxLayout</code>:</p>
+      <code>mylayout = QVBoxLayout()</code>
+      <p>We need to add widgets for our layout, like a button. A <code>QPushButton</code> works similarly to a <code>QAction</code>.<br>Create a <code>QBushButton</code> and connect its 'clicked' signal to a slot:</p>
+      <code>mybutton = QPushButton("click me!")<br>
+            mybutton.clicked.connect(myfunc) #this function is defined above
+      </code>
+      <p>Then add it to the layout, and set the layout as the <code>QDialog</code>'s layout:</p>
+      <code>mylayout.addWidget(mybutton)<br>
+            mypopup.setLayout(mylayout)
+      </code>
+      <p>We're done with the pop-up window now! Run <code>mypopup.exec_()</code><a href="#footnote-2">[2]</a> to open up the popup window. When you click the button, you'll get some output in the console below.</p>
+      <p>Let's add a menu to the main menu:</p>
+      <code>mainmenu = Krita.instance().activeWindow().qwindow().menuBar()<br>
+            mymenu = mainmenu.addMenu("my menu")</code>
+      <p>Create a <code>QAction</code> that runs <code>mypopup.exec_()</code> when its signal is triggered:</p>
+      <code>def openpopup():<br>
+            &emsp;&emsp;mypopup.exec_()<br><br>
+            mymenuitem = QAction("run my custom action")<br>
+            launchpopup.triggered.connect(openpopup)
+      </code>
+      <p>Then add this action to the menu:</p>
+      <code>mymenu.addAction(mymenuitem)</code>
 
       <h2 id="h2-plugins">Intro to plugins</h2>
-      <p>Krita plugins are a folder of Krita scripts that execute when Krita first loads.</p>
+      <p>Krita plugins are a folder of Krita scripts that execute when Krita first loads. They're easy for artists to use, and is the standard method of modifying Krita's code. There are two types of Krita plugins:</p>
+      <ul>
+        <li><strong>Extensions</strong> are extended actions that can be found in Tools 🡺 Scripts.</li>
+        <li><strong>Dockers</strong> are a pop-up window that can be rearranged to fit on the screen.</li>
+      </ul>
 
       <h2 id="h2-rsrcs">Resources</h2>
       <ul>
         <li><a href="https://scripting.krita.org">Krita Scripting School</a>: An offical, introductory website for learning how to code with Krita.</li>
         <li><a href="https://doc.qt.io/qtforpython-6/">PyQt</a>, <a href="https://doc.qt.io/">Qt</a>: Krita's GUI framework</li>
         <li><a href="https://api.kde.org/legacy/krita/html/index.html">Krita's API Reference</a> (C++)</li>
+        <li><a href="https://hackclub.enterprise.slack.com/archives/C0BGVPKH0JH">#wrangler</a> and <a href="https://hackclub.enterprise.slack.com/archives/C0BNMQFQ6EQ">#wrangler-help</a>: Dedicated help channels in the <a href="https://hackclub.com/slack">Hack Club Slack</a>!</li>
       </ul>
+
+      <hr id="footnote">
+      <aside>
+        <p><a href="" id="footnote-1">[1]</a>If you are on Krita version 6+, import the PyQt6 modules, not the PyQt5 modules:</p>
+        <code>from PyQt6.QtCore import *<br>
+              from PyQt6.QtGui import *<br>
+              from PyQt6.QtWidgets import *
+        </code>
+        <p><a href="" id="footnote-2">[2]</a>If you are on Krita version 6+, run <code>mypopup.exec()</code> instead.</p>
+      </aside>
       <footer>
         <a href="/docs/time.html"><span>Previous</span>🡸 Setting up time tracking</a>
         <a href="/docs/blender.html"><span>Next</span>Blender 🡺</a>
