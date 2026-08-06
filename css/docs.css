@@ -11,7 +11,7 @@ code {
   background-color: var(--black); border: 2px solid var(--dark-gray);
   margin: 0.5rem 0;
 }
-p>code { display: inline-block; margin: 0;}
+p>code, li>code { display: inline-block; margin: 0;}
 details {
   background-color: var(--black);
   border: 2px solid var(--dark-gray);

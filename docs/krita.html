@@ -108,11 +108,36 @@
       <code>mymenu.addAction(mymenuitem)</code>
 
       <h2 id="h2-plugins">Intro to plugins</h2>
-      <p>Krita plugins are a folder of Krita scripts that execute when Krita first loads. They're easy for artists to use, and is the standard method of modifying Krita's code. There are two types of Krita plugins:</p>
+      <small>Currently unfinished, work-in-progress. See <a href="https://scripting.krita.org/lessons/plugins-introduction">Krita Scripting School</a> for an alternate tutorial in the meantime!</small>
+      <p>Krita plugins are Python packages (a folder of Python files) that execute when Krita first loads. Plugins are located in the pykrita folder. Here's the location of the folder for each operating system:</p>
+      <ul>
+        <li><strong>Windows</strong>: <code>%APPDATA%\krita\pykrita</code></li>
+        <li><strong>Linux</strong>: <code>~/.local/share/krita/pykrita</code></li>
+        <li><strong>Apple</strong>: <code>~/Library/Application Support/Krita/pykrita</code></li>
+      </ul>
+      <p>There are two types of plugins:</p>
       <ul>
         <li><strong>Extensions</strong> are extended actions that can be found in Tools 🡺 Scripts.</li>
         <li><strong>Dockers</strong> are a pop-up window that can be rearranged to fit on the screen.</li>
       </ul>
+      <p>Both types of plugins have the same folder structure. Here's what the folder structure of a Krita plugin looks like:</p>
+      <ul>
+        <li>pykrita</li>
+        <ul>
+          <li>myplugin
+            <ul>
+              <li>__init__.py</li>
+              <li>myplugin.py</li>
+            </ul>
+          </li>
+          <li>myplugin.desktop</li>
+        </ul>
+      </ul>
+      <p>The main python file (myplugin.py) is structured as a class.</p>
+      <p>__init__.py is the first Python file that gets executed when your plugin loads. Its job is to initialize the plugin.</p>
+      <code>from .myplugin import *<br>
+            Krita.instance().addExtension(myclass(Krita.instance()))
+      </code>
 
       <h2 id="h2-rsrcs">Resources</h2>
       <ul>
@@ -146,6 +171,10 @@
             <li><a href="#h3-gui">The GUI</a></li>
           </ul></li>
           <li><a href="#h2-plugins">Intro to plugins</a></li>
+          <li><ul>
+            <li><a href="#h3-init">__init__.py</a></li>
+            <li><a href="#h3-desktop">The desktop file</a></li>
+          </ul></li>
           <li><a href="#h2-rsrcs">Resources</a></li>
         </ul></li>
       <ul>
