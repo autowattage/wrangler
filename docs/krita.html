@@ -49,7 +49,7 @@
       <p>There are a couple interesting functions in the <code>Krita</code> class: I'll take a look at one of the functions, <code>Krita.createDocument()</code>, but I encourage you to explore the <a href="https://api.kde.org/legacy/krita/html/classKrita.html">documentation</a> and see what other fun things you could print out!</p>
       <p><code>Krita.createDocument()</code> has 7 parameters (input values): 1 for the name of the document, and 6 of which match the options you can select when creating a new document in the GUI itself.</p>
       <img src="/img/docs/krita/newDocument.png" alt="Screenshot of Krita's option menu when creating a new document">
-      <p>For more information on what arguments to pass to the <code>Krita.newDocument()</code> function, navigate to <code>krita</code>'s <a href="https://api.kde.org/legacy/krita/html/classKrita.html">class</a> documentation and navigate to Public Slots 🡲 <code>createDocument()</code>. Go ahead an create a document with whichever arguments you'd like:</p>
+      <p>For more information on what arguments to pass to the <code>Krita.newDocument()</code> function, navigate to <code>krita</code>'s <a href="https://api.kde.org/legacy/krita/html/classKrita.html">class</a> documentation and navigate to Public Slots 🡲 <code>createDocument()</code>. Go ahead and create a document with whichever arguments you'd like:</p>
       <code>Krita.instance().createDocument(int width, int height, QString name, QString colorModel, QString colorDepth, QString profile)</code>
       <p>Nothing happened, because a document, like <code>Krita.instance()</code>, is just an object. You'll have to assign your document to a variable, then add it to the view, which will show the document in the GUI.</p>
       <code>myDoc = Krita.instance().createDocument(int width, int height, QString name, QString colorModel, QString colorDepth, QString profile)<br>
@@ -58,22 +58,38 @@
       <p>The most basic way for users to interact with Krita are actions. Actions are simple, pre-defined instructions that can be immediately executed. For example, all of the main menu buttons are actions.</p>
       <p>There are 2 parts of an action:</p>
       <ul>
-        <li><strong>Signals</strong> are sent out when the user interacts with it (ie. Button pressed).</li>
-        <li><strong>Slots</strong>, the code that runs when a signal is sent out.</li>
+        <li><strong>Signals</strong> are sent out when the user trigger an action (ie. Button pressed).</li>
+        <li><strong>Slots</strong> are the code that runs when a signal is sent out.</li>
       </ul>
-      <p>When an action is activated, it sends out a 'clicked' signal, which is <strong>connected</strong> to a slot.</p>
-      <p>To make your own action, make a QAction from the PyQt library (Krita's GUI framework) and connect its trigger to a function:</p>
+      <p>When an action is triggered, it sends out a signal, which is connected to a slot.</p>
+      <p>Krita has a variety of actions that can be triggered in a script: the <a href="https://scripting.krita.org/action-dictionary">Action Dictionary</a> has a collection of actions avalible to you. Here's an example below:</p>
+      <code>Krita.instance().action('help_about_app').trigger()</code>
+      <p>To make your own action, make a QAction from the PyQt library (Krita's GUI framework):</p>
       <code>from PyQt5.QtWidgets import QAction<br><br>
-            def myfunc():<br>
-            &emsp;&emsp;print("hello from myfunc")<br><br>
             myaction = QAction("run my custom action")<br>
-            myaction.triggered.connect(myfunc)<br>
-            myaction.trigger() #if you want to see an immediate result
       </code>
+      <p>and connect its signal to a slot:</p>
+      <code>def myfunc():<br>
+            &emsp;&emsp;print("hello from myfunc")<br><br>
+            myaction.triggered.connect(myfunc)<br>
+      </code>
+
       <h3 id="h3-gui">The GUI</h3>
+      <p>Krita uses a framework called <a href="https://doc.qt.io/">Qt</a> (PyQt for python) to display graphics. Qt's API contains multiple modules for different purposes, the most common being QtCore (for non-GUI components), QtGui (for GUI windows, events, etc), and QtWidget (for GUI components like buttons).</p>
+      <p>We'll make a simple pop-up that can be accessed from the main menu. First, import PyQt and its modules.</p>
+      <code>from PyQt5.QtCore import *<br>
+            from PyQt5.QtGui import *<br>
+            from PyQt5.QtWidgets import *
+      </code>
+      <p>Then add a menu:</p>
+      <code>mainMenu = Krita.instance().activeWindow().qwindow().menuBar()</code>
+      <code>mainMenu.addMenu("my custom menu")</code>
+      <p>Finally, add a 
       <p>Buttons are merely actions with a GUI layer on top.</p>
+
       <h2 id="h2-plugins">Intro to plugins</h2>
       <p>Krita plugins are a folder of Krita scripts that execute when Krita first loads.</p>
+
       <h2 id="h2-rsrcs">Resources</h2>
       <ul>
         <li><a href="https://scripting.krita.org">Krita Scripting School</a>: An offical, introductory website for learning how to code with Krita.</li>
