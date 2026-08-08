@@ -153,6 +153,16 @@ main {
       &:first-of-type>p::before { display: none; }
     }
   }
+  #ideas {
+    >div, >ul { display: flex; flex-wrap: wrap; }
+    >div {
+      figure { margin: 0;}
+    }
+    >ul {
+      margin: 0; padding: 0;
+      list-style: none;
+    }
+  }
 }
 
 footer {

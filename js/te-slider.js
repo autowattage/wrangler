@@ -9,6 +9,6 @@ for (let e of hslsliders) {
   e.addEventListener('input', () => {
     e.style.setProperty('--value', e.value)
     // console.log(hslsliders[0].value);
-    h1img.style.filter=`hue-rotate(${(hslsliders[0].value - 50)*2}deg) saturate(${hslsliders[1].value*2}%) brightness(${hslsliders[2].value/50}) `;
+    h1img.style.filter=`hue-rotate(${(hslsliders[0].value-50)*3.6}deg) saturate(${hslsliders[1].value*2}%) brightness(${hslsliders[2].value/50}) `;
   });
 }
