@@ -4,7 +4,7 @@
 /*generated with Input range slider CSS style generator (version 20211225)
 https://toughengineer.github.io/demo/slider-styler*/
 input[type=range].te-slider {
-  height: 1em;
+  height: 1em; cursor: pointer;
   -webkit-appearance: none;
 }
 

@@ -61,7 +61,7 @@ main {
       &:hover { background-color: var(--light-blue);}
       &:active { background-color: var(--blue-unsafe);}
     }
-    img { max-height: 8rem;}
+    img { width: 100%; height: auto;}
   }
   details[open] {
     background-color: var(--dark-gray);

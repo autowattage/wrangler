@@ -151,6 +151,22 @@ main {
       }
       >p:first-of-type::after { left: auto; right: -0.4rem;}
       &:first-of-type>p::before { display: none; }
+      >div {
+        display: flex; gap: 0.75rem; margin: 0.5rem 1rem 0;
+        input {
+          flex-grow: 1; min-width: 0;
+          background-color: var(--white);
+          border-radius: 0.25rem; border: 2px solid var(--gray);
+        }
+        button {
+          padding: 0.25rem 1rem;
+          background-color: var(--light-gray);
+          border-radius: 0.25rem; border: 2px solid var(--gray);
+          &:hover { background-color: var(--white); }
+          &:active { background-color: var(--gray); border-color: var(--dark-gray); }
+        }
+        
+      }
     }
   }
   #ideas {
@@ -187,6 +203,30 @@ main {
       }
     }
   }
+  #prizes>div {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+    details {
+      border-radius: 0.5rem;
+      figure { margin: 1rem 1rem 0.5rem;}
+      summary {
+        background-color: var(--blue); color: var(--black); padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+      }
+      &[open] {
+        padding-bottom: 0.5rem;
+        background-image: linear-gradient(to bottom, var(--black), var(--dark-gray) 20%);
+        summary { border-radius: 0.5rem 0.5rem 0 0; margin-bottom: 0.25rem; }
+      }
+      button {
+        width: 100%; background-color: var(--blue);
+        font-size: 1rem; margin-top: 0.5rem; cursor: pointer;
+        border: none; border-radius: 0.5rem; padding: 0.5rem 1rem;
+        &:hover { background-color: var(--light-blue);}
+        &:active { background-color: var(--blue-unsafe);}
+      }
+    }
+    details:nth-child(2n+1) { summary, button { background-color: var(--yellow);}}
+  }
 }
 
 footer {
@@ -194,6 +234,7 @@ footer {
   background-image: url("../img/grid-light.png"); background-size: 0.75rem 0.75rem;
   padding: 1rem;
 }
+
 /* Big mobile */
 @media screen and (min-width: 25rem) {
   header {
@@ -211,12 +252,14 @@ footer {
       &:nth-of-type(2) { left: calc(calc(100% - min(80%, 30rem)) / 3); span { color: var(--black); background-color: var(--yellow);} }
       &:nth-of-type(3) { left: calc(calc(calc(100% - min(80%, 30rem)) / 3) * 2); span { background-color: var(--blue);} }
       &:last-of-type { left: calc(100% - min(80%, 30rem)); span::after { display: none}; }
+      &:first-of-type>div>button { flex: 0 0 30%;}
     }
     #ideas>div {
       gap: 0.5rem;
       >a { display: block; max-width: 25rem; margin: 0; flex: 0 0 calc(50% - 1rem);}
     }
   }
+  #prizes>div { justify-content: center; gap: 1rem; details { max-width: 20rem;}}
   footer { padding: 2rem;}
 }
 /* Tablet */
@@ -244,6 +287,7 @@ footer {
       details { width: 40%; flex-grow: 1; }
       h2 { width: 100%; flex-shrink: 0; }
     }
+    #prizes>div>details { flex: 0 0 calc(50% - 0.5rem); max-width: 25rem;}
   }
 }
 /* Desktop */
