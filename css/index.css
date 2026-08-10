@@ -1,4 +1,5 @@
 h1 { margin: 0; }
+h2 { font-size: 2.25rem; color: var(--blue); margin: 1rem 0; }
 header {
   display: flex; flex-direction: column-reverse; gap: 2rem;
   position: relative; margin: 4rem 1rem 0;
@@ -159,7 +160,7 @@ main {
           border-radius: 0.25rem; border: 2px solid var(--gray);
         }
         button {
-          padding: 0.25rem 1rem;
+          padding: 0.25rem 1rem; cursor: pointer;
           background-color: var(--light-gray);
           border-radius: 0.25rem; border: 2px solid var(--gray);
           &:hover { background-color: var(--white); }
@@ -186,12 +187,12 @@ main {
         background-color: var(--dark-gray);
         img { padding: 1rem; box-sizing: border-box;}
         figcaption {
-          background-color: var(--blue); color: var(--black);
+          background-color: var(--yellow); color: var(--black);
           padding: 0.5rem 1rem; border-radius: 0.5rem 0.5rem 0 0;
         }
       }
-
     }
+    >div:first-of-type { a:first-child, a:last-child { figcaption { background-color: var(--blue);}}}
     >div:last-of-type {
       gap: 0.5rem;
       a { margin: 0; flex: 0 0 80%; max-width: 7rem;}
@@ -201,6 +202,8 @@ main {
         img { padding: 0.5rem;}
         figcaption { border-radius: 0 0 0.5rem 0.5rem;}
       }
+      a:nth-child(3n+1) { figcaption { background-color: var(--blue);}}
+      a:nth-child(3n) { figcaption { background-color: var(--red); color: var(--white);}}
     }
   }
   #prizes>div {
@@ -217,15 +220,16 @@ main {
         background-image: linear-gradient(to bottom, var(--black), var(--dark-gray) 20%);
         summary { border-radius: 0.5rem 0.5rem 0 0; margin-bottom: 0.25rem; }
       }
-      button {
-        width: 100%; background-color: var(--blue);
+      a {
+        width: 100%; background-color: var(--blue); display: block; 
+        color: var(--black); box-sizing: border-box;
         font-size: 1rem; margin-top: 0.5rem; cursor: pointer;
         border: none; border-radius: 0.5rem; padding: 0.5rem 1rem;
         &:hover { background-color: var(--light-blue);}
         &:active { background-color: var(--blue-unsafe);}
       }
     }
-    details:nth-child(2n+1) { summary, button { background-color: var(--yellow);}}
+    details:first-child, details:last-child { summary, a { background-color: var(--yellow);}}
   }
 }
 
@@ -237,6 +241,7 @@ footer {
 
 /* Big mobile */
 @media screen and (min-width: 25rem) {
+  h2 { font-size: 2.75rem; margin: 1.5rem 0; }
   header {
     margin: 5rem 2rem 0;
     #node-viewer {
@@ -252,7 +257,7 @@ footer {
       &:nth-of-type(2) { left: calc(calc(100% - min(80%, 30rem)) / 3); span { color: var(--black); background-color: var(--yellow);} }
       &:nth-of-type(3) { left: calc(calc(calc(100% - min(80%, 30rem)) / 3) * 2); span { background-color: var(--blue);} }
       &:last-of-type { left: calc(100% - min(80%, 30rem)); span::after { display: none}; }
-      &:first-of-type>div>button { flex: 0 0 30%;}
+      &:first-of-type>div>button { flex: 1 1 30%;}
     }
     #ideas>div {
       gap: 0.5rem;
@@ -264,6 +269,7 @@ footer {
 }
 /* Tablet */
 @media screen and (min-width: 40rem) {
+  h2 { font-size: 3rem; margin: 2rem 0; }
   header {
     margin: 6rem auto 0; padding: 0 2rem; max-width: 45rem; 
     justify-content: center; gap: 2rem; flex-direction: row;
