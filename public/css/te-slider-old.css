@@ -1,0 +1,110 @@
+/*generated with Input range slider CSS style generator (version 20211225)
+https://toughengineer.github.io/demo/slider-styler*/
+input[type=range].te-slider {
+  -webkit-appearance: none;
+}
+
+/*progress support*/
+input[type=range].te-slider.slider-progress {
+  --min: 0;
+  --max: 100;
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(var(--ratio) * 100%);
+}
+
+/*webkit*/
+input[type=range].te-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 1em;
+  visibility: hidden;
+}
+
+input[type=range].te-slider::-webkit-slider-runnable-track {
+  height: 1em;
+  background: var(--white);
+  box-shadow: none;
+}
+
+input[type=range].te-slider.slider-progress::-webkit-slider-runnable-track {
+  background: linear-gradient(var(--blue), var(--blue)) 0/var(--sx) 100% no-repeat, var(--white);
+}
+
+input[type=range].te-slider.slider-progress:hover::-webkit-slider-runnable-track {
+  background: linear-gradient(var(--dark-blue), var(--dark-blue)) 0/var(--sx) 100% no-repeat, var(--white);
+}
+
+input[type=range].te-slider.slider-progress:active::-webkit-slider-runnable-track {
+  background: linear-gradient(var(--blue), var(--blue)) 0/var(--sx) 100% no-repeat, var(--white);
+}
+
+/*mozilla*/
+input[type=range].te-slider::-moz-range-thumb {
+  width: 0;
+  height: 1rem;
+  visibility: hidden;
+}
+
+input[type=range].te-slider::-moz-range-track {
+  height: 1rem;
+  margin: 0;
+  background: var(--white);
+  box-shadow: none;
+}
+
+input[type=range].te-slider.slider-progress::-moz-range-track {
+  background: linear-gradient(var(--blue), var(--blue)) 0/var(--sx) 100% no-repeat, var(--white);
+}
+
+input[type=range].te-slider.slider-progress:hover::-moz-range-track {
+  background: linear-gradient(var(--dark-blue), var(--dark-blue)) 0/var(--sx) 100% no-repeat, var(--white);
+}
+
+input[type=range].te-slider.slider-progress:active::-moz-range-track {
+  background: linear-gradient(var(--blue), var(--blue)) 0/var(--sx) 100% no-repeat, var(--white);
+}
+
+/*ms*/
+input[type=range].te-slider::-ms-fill-upper {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type=range].te-slider::-ms-fill-lower {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type=range].te-slider::-ms-thumb {
+  width: 2em;
+  height: 2em;
+  border-radius: 1rem;
+  background: #007cf8;
+  border: none;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+input[type=range].te-slider::-ms-track {
+  height: 1rem;
+  border-radius: 0.5em;
+  background: var(--white);
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+input[type=range].te-slider.slider-progress::-ms-fill-lower {
+  height: 1rem;
+  border-radius: 0.5em 0 0 0.5em;
+  margin: -1px 0 -1px -1px;
+  background: var(--blue);
+}
+
+input[type=range].te-slider.slider-progress:hover::-ms-fill-lower {
+  background: var(--dark-blue);
+}
+
+input[type=range].te-slider.slider-progress:active::-ms-fill-lower {
+  background: var(--blue);
+}

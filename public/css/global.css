@@ -1,0 +1,91 @@
+:root {
+  --light-red: #D57AA3;
+  --dark-red: #A32C62;
+  --red: #B03976;
+  --red-unsafe: #C74E84;
+  --light-yellow: #DDCE9C;
+  --yellow: #D7BA59;
+  --dark-yellow: #CD9E47;
+  --blue: #4EA5C5;
+  --light-blue: #6BC9EB;
+  --dark-blue: #2A4A7C;
+  --blue-unsafe: #3E94B3;
+  --white: #ECE6E4;
+  --light-gray: #C7BBBE;
+  --gray: #8C848C;
+  --dark-gray: #4F4B55;
+  --black: #35303B;
+}
+img { width: 100%; height: auto; }
+a {
+  display: inline-block; color: var(--light-blue); text-decoration-style:wavy;
+  padding: .1rem .25rem; border-radius: .25rem;
+}
+a:hover { color: var(--black); background-color: var(--blue); }
+p { margin: 0; padding: 0.5rem 0;}
+p:first-of-type { padding-top: 0;}
+p:last-of-type { padding-bottom: 0;}
+h2 { text-align:center; font-size: 1.75rem; margin: .5rem 0;}
+summary { cursor: pointer; }
+html {
+  background-color: var(--black); color: var(--white);
+  background-image: url("/img/grid.png");
+  background-size: 0.75rem 0.75rem;
+  font-family: Arial, sans-serif;
+  margin: 0; padding: 0;
+}
+body { margin: 0; padding: 0; }
+
+#navbar {
+  background-color: var(--dark-gray); padding: 0.5rem; height: 3.5rem;
+  position: fixed; bottom: 0; left: 0; width: 100%; box-sizing: border-box;
+  display: flex; flex-direction: row-reverse; justify-content: space-between;
+  >div {
+    text-align: right;
+    &::after {
+      content:""; display: block;
+      width: 1.5rem; height: 1.5rem;
+      position: absolute; right: 1rem; top: 1.25rem;
+      background-image: url("/img/faces/default.png");
+      background-size: 1.5rem 1.5rem;
+    }
+    img { height: 100%; width: auto; position: relative; }
+  }
+  details {
+    align-content: center;
+    summary {
+      list-style-type: none; height: 100%; aspect-ratio: 1/1;
+      &::-webkit-details-marker { display: none; }
+    }
+    ul {
+      position: absolute; box-sizing: border-box;
+      bottom: 3.5rem; left: 0;
+      margin: 0; padding: .5rem 0.5rem 0; width: 100%;
+      background-color: var(--dark-gray);
+      li>a {
+        display: flex; gap: 0.5rem; align-items: center;
+        img {
+          height: 2rem; width: auto;
+          filter: brightness(0) saturate(100%) invert(85%) sepia(1%) saturate(1301%) hue-rotate(294deg) brightness(95%) contrast(79%);
+        }
+        &:hover { background-color: var(--dark-blue);}
+      }
+    }
+  }
+}
+
+/* Big mobile */
+@media screen and (min-width: 25rem) {
+  h2 { font-size: 2rem;}
+  #navbar {
+    padding: 0.5rem 2rem;
+    >div::after { right: 2.5rem;}
+  }  
+}
+/* Tablet */
+@media screen and (min-width: 40rem) {
+}
+/* Desktop */
+@media screen and (min-width: 67rem) {
+  h2 { font-size: 2.25rem;}
+}

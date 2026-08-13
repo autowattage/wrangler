@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% set title = "Shop" %}
+{% set stylelist = ["shop.css"] %}
+{% set favicon = "/favicon.png" %}
+
+{% block content %}
+<header>
+  <details open>
+    <summary>WIP state - Shop opens soon!</summary>
+    <span>Image</span>
+    <h1><a href="/"><img src="/img/shop.png" alt="Shop"></a></h1>
+  </details>
+</header>
+
+<main>
+  {% for section, shoplist in shopitems  %}
+  <section>
+    <h2>{{ section }}</h2>
+    {% for shopitem in shoplist %}
+    <details open>
+      <summary>{{ shopitem[0]}}</summary>
+      <figure>
+        <img src="{{ shopitem[2] }}" alt="{{ shopitem[3] }}">
+        <figcaption>
+          <p>{{ shopitem[1] }}</p>
+          <button type="button">{{ shopitem[5] }} hour{% if shopitem[5] != 1 %}s{% endif %}</button>
+        </figcaption>
+      </figure>
+    </details>
+    {% endfor %}
+  </section>
+  {% endfor %}
+</main>
+{% endblock %}

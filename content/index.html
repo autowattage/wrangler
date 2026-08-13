@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% set title = "Home" %}
+{% set stylelist = ["index.css", "te-slider.css"] %}
+{% set favicon = "/favicon.png" %}
+
+{% block content %}
+<header>
+  <div>
+    <details id="node-img">
+      <summary>Image</summary>
+      <span>Image</span>
+      <span>Alpha</span>
+      <p>
+        <button type="button"><img src="/img/gallery-open.png" alt="Select photo"></button>
+        <span>wrangler.png</span>
+        <button type="button"><img src="/img/gallery-close.png" alt="Clear photo"></button>
+      </p>
+    </details>
+    <details id="node-hsl">
+      <summary>HSL Adjustment</summary>
+      <span>Image</span>
+      <label><input class="te-slider slider-progress" type="range" min="0" max="100"><span>Hue</span></label>
+      <label><input class="te-slider slider-progress" type="range" min="0" max="100"><span>Saturation</span></label>
+      <label><input class="te-slider slider-progress" type="range" min="0" max="100"><span>Lightness</span></label>
+    </details>
+  </div>
+  <div>
+    <details open id="node-viewer">
+      <summary>Viewer</summary>
+      <span>Image</span>
+      <h1><img src="/img/logo-white.png" alt="Wrangler logo"></h1>
+    <a href="https://sundial.city"><img src="/img/bunnyguy.png" alt="By Nick/Bunnyguy"></a>
+    <img src="/img/chillin.png" onmouseover="this.src='/img/chillin-hover.png';" onmousedown="this.src='/img/chillin-active.png';" onmouseup="this.src='/img/chillin-hover.png';" onmouseleave="this.src='/img/chillin.png';" alt="Adaptor-shaped character sits on a ledge">
+    <a href="/now/"><img src="/img/now.png" alt="Go to the NOW page"></a>
+    </details>
+    <p>build an <b>art tool</b>, get free <b>art supplies</b></p>
+    <div>
+      <a href="/docs/">get started</a>
+      <a href="/shop/">art shop</a>
+    </div>
+  </div>
+  <script src="/js/landing.js"></script>
+  <script src="/js/te-slider.js"></script>
+</header>
+
+<main>
+  <!-- How it WOrks -->
+  <section id="flow">
+    <h2>How it works</h2>
+    <details open>
+      <summary>Join the community!</summary>
+      <p>Wrangler's community and support are based in the Hack Club slack. Enter your email below for an invite!</p>
+      <div>
+        <input id="flow-mail" type="email"></input>
+        <button type="button" id="joinbutton">Join!</button>
+        <script src="/js/joinbutton.js"></script>
+      </div>
+    </details>
+    <details open>
+      <summary>Build a tool</summary>
+      <p>Beginner? Set up <a href="/docs/time.html">time tracking</a> and follow the <a href="/docs/">guides</a>!</p>
+      <p>See the <a href="#reqs">requirements</a> section to see all the guidelines and rules your project needs to follow.</p>
+    </details>
+    <details open>
+      <summary>Ship your project</summary>
+      <p>Once you're finished with your project, <a href="/docs/submit.html#h2-ship">ship</a> your project and submit it <a href="/docs/submit.html#h2-done">here</a>!</p>
+    </details>
+    <details open>
+      <summary>Win prizes</summary>
+      <p>Trade hours from your projects to buy prizes in the <a href="/shop/">shop!</a></p>
+      </details>
+  </section>
+
+  <!-- Ideas section -->
+  <section id="ideas">
+    <h2>You could make...</h2>
+    <div>
+      <a href="https://sprngr.itch.io/aseprite-record"><figure>
+        <img src="/img/record.png" alt="Template image: Aseprite logo">
+        <figcaption>Record for Aseprite</figcaption>
+      </figure></a>
+      <a href="https://blender-addons.org/woolly-tools-shaders/"><figure>
+        <img src="/img/wooly.png" alt="3D model of a donut with a needle-felt texture, with the word 'Wooly' on top">
+        <figcaption>Woolly Tools & Shaders</figcaption>
+      </figure></a>
+      <a href="https://github.com/Yuntokon/BlenderLayer/"><figure>
+        <img src="/img/blenderlayer.png" alt="Blender model in a Krita canvas">
+        <figcaption>Blender Layer</figcaption>
+      </figure></a>
+      <a href="https://x6ud.github.io"><figure>
+        <img src="/img/x6ud.png" alt="3D model of a wolf skull next to photos of animals facing the same direction of the wolf skull">
+        <figcaption>x6ud's animal art references</figcaption>
+      </figure></a>
+    </div>
+    <p>for these apps...<br>(click to view a guide!)</p>
+    <div>
+      <a href="/docs/krita.html"><figure>
+        <img src="/img/krita.png" alt="Krita logo">
+        <figcaption>Krita</figcaption>
+      </figure></a>
+      <a href="/docs/blender.html"><figure>
+        <img src="/img/blender.png" alt="Blender logo">
+        <figcaption>Blender</figcaption>
+      </figure></a>
+      <a href="/docs/aseprite.html"><figure>
+        <img src="/img/aseprite.png" alt="Aseprite logo">
+        <figcaption>Aseprite</figcaption>
+      </figure></a>
+      <a href="/docs/#h3-adb"><figure>
+        <img src="/img/photoshop.png" alt="Photoshop logo">
+        <figcaption>Photoshop</figcaption>
+      </figure></a>
+      <a href="/docs/#h3-fmp"><figure>
+        <img src="/img/firealpaca.png" alt="Firealpaca logo">
+        <figcaption>Firealpaca</figcaption>
+      </figure></a>
+      <a href="/docs/#h3-gmp"><figure>
+        <img src="/img/gimp.png" alt="GIMP logo">
+        <figcaption>GIMP</figcaption>
+      </figure></a>
+    </div>
+    <p>and more! (see the <a href="/docs/">docs</a>)</p>
+  </section>
+  <!-- Prizes section -->
+  <section id="prizes">
+    <h2>You could get...</h2>
+    <div>
+      <details open>
+        <summary>Sakura Pigma Micron 005-08 set (x6)</summary>
+        <figure>
+          <img src="/img/shop/microns.png" alt="A red box of 6 microns">
+          <figcaption>
+            <p>They say the pen is mightier than the sword!</p>
+            <a href="/shop/">6 hours</a>
+          </figcaption>
+        </figure>
+      </details>
+      <details open>
+        <summary>Clip Studio Paint PRO v5 License</summary>
+        <figure>
+          <img src="/img/shop/csp.png" alt="Clip Studio Paint Pro v5 box">
+          <figcaption>
+            <p>Digital art software!</p>
+            <a href="/shop/">10 hours</a>
+          </figcaption>
+        </figure>
+      </details>
+      <details open>
+        <summary>Posca Acrylic Paint Markers (x16)</summary>
+        <figure>
+          <img src="/img/shop/posca.png" alt="Top box design of a Prismacolor Premier colored pencils set">
+          <figcaption>
+            <p>Crispy and vibrant paint markers!</p>
+            <a href="/shop/">10 hours</a>
+          </figcaption>
+        </figure>
+      </details>
+      <details open>
+        <summary>Huion New Camvas 13 (Gen 3)</summary>
+        <figure>
+          <img src="/img/shop/kamvas.png" alt="A black screen drawing tablet">
+          <figcaption>
+            <p>Giant screen display!</p>
+            <a href="/shop/">40 hours</a>
+          </figcaption>
+        </figure>
+      </details>
+      
+    </div>
+  </section>
+  <!-- faq -->
+  <section id="faq">
+    <h2>FAQ</h2>
+    <details>
+      <summary>Can I participate?</summary>
+      <p>Any teenager ages 13-18 (under 19) can join!</p>
+    </details>
+    <details>
+      <summary>Can I join even if I can't code?</summary>
+      <p>Beginners are more than welcome to participate in Wrangler!</p>
+    </details>
+    <details>
+      <summary>How long does Wrangler last?</summary>
+      <p>Wrangler runs for the whole month of August 2026. Some prizes have deadlines that end earlier.</p>
+    </details>
+    <details>
+      <summary>Can I submit my project to another YSWS?</summary>
+      <p>Double-dipping isn't allowed, sorry!</p>
+    </details>
+    <details>
+      <summary>Can I submit team projects?</summary>
+      <p>No, sorry!</p>
+    </details>
+    <details>
+      <summary>I have more questions!</summary>
+      <p>Send a message in <a href="https://hackclub.enterprise.slack.com/archives/C0BGVPKH0JH">#wrangler</a> on Hack Club Slack or send an email to <a href="mailto:nick@hackclub.com">nick@hackclub.com</a>!</p>
+    </details>
+  </section>
+</main>
+{% endblock %}

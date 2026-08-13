@@ -1,0 +1,26 @@
+{
+  "name": "wrangler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/autowattage/wrangler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/autowattage/wrangler/issues"
+  },
+  "homepage": "https://github.com/autowattage/wrangler#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}
