@@ -125,47 +125,24 @@
   <section id="prizes">
     <h2>You could get...</h2>
     <div>
+      {% set prizelist = [
+        shopitems["Digital"][4],
+        shopitems["Traditional"][5],
+        shopitems["Traditional"][8],
+        shopitems["Digital"][6]
+      ] %}
+      {% for shopitem in prizelist %}
       <details open>
-        <summary>Sakura Pigma Micron 005-08 set (x6)</summary>
+        <summary>{{ shopitem[0]}} </summary>
         <figure>
-          <img src="/img/shop/microns.png" alt="A red box of 6 microns">
+          <img src="{{ shopitem[2] }}" alt="{{ shopitem[3] }}">
           <figcaption>
-            <p>They say the pen is mightier than the sword!</p>
-            <a href="/shop/">6 hours</a>
+            <p>{{ shopitem[1] }}</p>
+            <a href="/shop/">{{ shopitem[5] }} hour{% if shopitem[5] != 1 %}s{% endif %}</a>
           </figcaption>
         </figure>
       </details>
-      <details open>
-        <summary>Clip Studio Paint PRO v5 License</summary>
-        <figure>
-          <img src="/img/shop/csp.png" alt="Clip Studio Paint Pro v5 box">
-          <figcaption>
-            <p>Digital art software!</p>
-            <a href="/shop/">10 hours</a>
-          </figcaption>
-        </figure>
-      </details>
-      <details open>
-        <summary>Posca Acrylic Paint Markers (x16)</summary>
-        <figure>
-          <img src="/img/shop/posca.png" alt="Top box design of a Prismacolor Premier colored pencils set">
-          <figcaption>
-            <p>Crispy and vibrant paint markers!</p>
-            <a href="/shop/">10 hours</a>
-          </figcaption>
-        </figure>
-      </details>
-      <details open>
-        <summary>Huion New Camvas 13 (Gen 3)</summary>
-        <figure>
-          <img src="/img/shop/kamvas.png" alt="A black screen drawing tablet">
-          <figcaption>
-            <p>Giant screen display!</p>
-            <a href="/shop/">40 hours</a>
-          </figcaption>
-        </figure>
-      </details>
-      
+      {% endfor %}
     </div>
   </section>
   <!-- faq -->
