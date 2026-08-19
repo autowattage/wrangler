@@ -1,10 +1,9 @@
-import { DateTime } from "luxon";
-
 export default async function(eleventyConfig) {
-	// copy /public folder to _site
-  eleventyConfig.addPassthroughCopy({"public": "."});
-	// copy /public folder to _site
-  eleventyConfig.addPassthroughCopy({"api": "api"});
+	// copy folders to _site
+  eleventyConfig.addPassthroughCopy({"public/css": "css"});
+  eleventyConfig.addPassthroughCopy({"public/img": "img"});
+  eleventyConfig.addPassthroughCopy({"public/js": "js"});
+  // eleventyConfig.addPassthroughCopy({"api": "api"});
 
   // enable inserting HTML in markdown
   eleventyConfig.setNunjucksEnvironmentOptions({
