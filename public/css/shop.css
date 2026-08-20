@@ -99,6 +99,59 @@ footer {
   background-image: url("../img/grid-light.png"); background-size: 0.75rem 0.75rem;
   padding: 1rem;
 }
+
+#confirm-popup {
+  display: none; justify-content: center; align-items: center;
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: color-mix(in srgb, var(--black), transparent 25%);
+  details {
+    background-color: var(--dark-gray); border-radius: 1rem;
+    width: 90%; max-width: 30rem; height: auto;
+    margin: 0 1rem; padding: 0;
+    summary {
+      background-color: var(--blue); color: var(--black);
+      padding: 0.5rem 1rem; border-radius: 1rem 1rem 0 0;
+      display: flex; align-items: center; justify-content: space-between;
+      button {
+        display: flex; justify-content: center; align-items: center;
+        height: 2rem; margin: 0.25rem 0;aspect-ratio: 1/1; cursor: pointer;
+        background-color: var(--light-blue);
+        border: none; border-radius: 0.5rem; padding: 0.5rem;
+        &:hover { background-color: color-mix(in srgb, var(--light-blue), var(--white) 50%); }
+        &:active { background-color: color-mix(in srgb, var(--light-blue), var(--blue) 50%); }
+      }
+    }
+    figure {
+      margin: 1rem; height: 100%;
+      figcaption>p { text-align: center; margin: 1rem 0;}
+      table {
+        width: 100%;
+        td:first-child { text-align: right; }
+        td:last-child { padding-left: 1rem; }
+        tr:nth-child(2)>* { padding-bottom: 0.25rem;}
+        tr:last-child {
+          position: relative;
+          >* { padding-top: 0.5rem;}
+          &::after {
+            content: ""; display: block; position: absolute;
+            width: 100%; height: 0.25rem;
+            border-top: 2px solid var(--light-gray);
+            left: 0; top: 0;
+          }
+        }
+      }
+      figcaption>input {
+        display: flex; justify-content: center; align-items: center;
+        width: 100%; margin: 0.5rem 0 0; cursor: pointer;
+        background-color: var(--blue);
+        border: none; border-radius: 0.5rem; padding: 0.75rem 0.5rem;
+        &:hover { background-color: color-mix(in srgb, var(--light-blue), var(--blue) 50%); }
+        &:active { background-color: color-mix(in srgb, var(--blue-unsafe), var(--blue) 50%); }
+      }
+    }
+  }
+}
 /* Big mobile */
 @media screen and (min-width: 25rem) {
   header { padding: 1rem 2rem 0; }
@@ -119,6 +172,7 @@ footer {
     h2 {font-size: 2.75rem;}
     details { flex: 0 0 calc(33% - 0.625rem); }
   }
+  #confirm-popup>details { max-width: 35rem; }
 }
 /* Desktop */
 @media screen and (min-width: 67rem) {
@@ -126,6 +180,7 @@ footer {
     h2 {font-size: 3rem;}
     details { flex: 0 0 calc(25% - 0.75rem); }
   }
+  #confirm-popup>details { max-width: 40rem; }
 }
 /* BIG Desktop */
 @media screen and (min-width: 90rem) {

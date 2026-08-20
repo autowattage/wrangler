@@ -35,13 +35,13 @@
   <section>
     <h2>{{ section }}</h2>
     {% for shopitem in shoplist %}
-    <details open>
+    <details open onclick="return false;">
       <summary>{{ shopitem[0]}}</summary>
       <figure>
         <img src="{{ shopitem[2] }}" alt="{{ shopitem[3] }}">
         <figcaption>
           <p>{{ shopitem[1] }}</p>
-          <button type="button">{{ shopitem[5] }} hour{% if shopitem[5] != 1 %}s{% endif %}</button>
+          <button type="button" class="shopbutton" data-item-category="{{ section }}" data-item-id="{{ loop.index0 }}">{{ shopitem[5] }} hour{% if shopitem[5] != 1 %}s{% endif %}</button>
         </figcaption>
       </figure>
     </details>
@@ -49,5 +49,40 @@
   </section>
   {% endfor %}
 </main>
+
+<div id="confirm-popup">
+  <details open onclick="return false;">
+    <summary>
+      <p id="popup-0">loading...</p>
+      <button type="button">X</button>
+    </summary>
+    <figure>
+      <img src="/img/shop/kurutoga.png" id="popup-23" alt="Shop image">
+      <figcaption>
+        <p id="popup-1">loading...</p>
+        <table><tbody>
+          <tr>
+            <td>50 hours</td>
+            <td>Your balance</td>
+          </tr>
+          <tr>
+            <td id="popup-5">- 10 hours</td>
+            <td>Price</td>
+          </tr>
+          <tr>
+            <td>40 hours</td>
+            <td>Remaining</td>
+          </tr>
+        </tbody></table>
+        <select id="popup-4"></select>
+        <input id="submit" type="submit" value="Purchase for X hours">
+      </figcaption>
+    </figure>
+  </details>
+</div>
+
+<script>
+  const shopitems = {{ shopitems | dump | safe }}
+</script>
 <script src="/js/shop.js"></script>
 {% endblock %}

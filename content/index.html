@@ -132,7 +132,7 @@
         shopitems["Digital"][6]
       ] %}
       {% for shopitem in prizelist %}
-      <details open>
+      <details open onclick="return false;">
         <summary>{{ shopitem[0]}} </summary>
         <figure>
           <img src="{{ shopitem[2] }}" alt="{{ shopitem[3] }}">
