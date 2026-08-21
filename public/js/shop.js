@@ -1,9 +1,45 @@
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 stats = document.getElementById("stats");
+// logged into hack club auth
 if (code) {
-  // console.log("yipper i got a code");
+  console.log("yipper i got a code");
   stats.style.display = "flex";
+
+  //exchange for toknes
+  fetch("/api/get-token", {
+    method: "POST",
+    body: JSON.stringify({code: code}),
+    headers: {"Content-type": "application/json; charset=UTF-8"}
+  }).then(response => {
+    return response.json().then(data => {
+      if (!response.ok) {
+        console.log(`token exchange failed:`, data);
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return data;
+    });
+  }).then(data => {
+    console.log(data);
+  }).catch (error => {
+    console.log(`im a fetch error! ${error}`);
+  })
+
+  // validate token
+  fetch("https://auth.hackclub.com/oauth/discovery/keys",)
+  .then(response => {
+    return response.json().then(data => {
+      if (!response.ok) {
+        console.log(`token exchange failed:`, data);
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return data;
+    });
+  }).then(data => {
+    console.log(data);
+  }).catch (error => {
+    console.log(`im a fetch error! ${error}`);
+  })
 }
 
 const shopbuttons = document.getElementsByClassName("shopbutton");
