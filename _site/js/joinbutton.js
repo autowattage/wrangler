@@ -1,4 +1,5 @@
 const emailfield = document.getElementById("flow-mail");
+const joinbutton =  document.getElementById("joinbutton");
 
 const validateEmail = (email) => {
   return String(email)
@@ -8,10 +9,11 @@ const validateEmail = (email) => {
     );
 };
 
-document.getElementById("joinbutton").addEventListener("click", async () => {
+joinbutton.addEventListener("click", async () => {
+  joinbutton.textContent = "sending email..";
   if (validateEmail(emailfield.value)) {
     try {
-      const response = await fetch("/api/add-to-airtable", {
+      const response = await fetch("/api/email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -28,16 +30,16 @@ document.getElementById("joinbutton").addEventListener("click", async () => {
 
       if (response.ok) {
         console.log("Added to Airtable!");
-        document.getElementById("joinbutton").textContent = "Email sent!";
+        joinbutton.textContent = "Email sent!";
       } else {
         console.error("Request failed:", text);
       }
     } catch (error) {
       console.error("Fetch failed:", error);
-      document.getElementById("joinbutton").textContent = "Error, try again?";
+      joinbutton.textContent = "Error, try again?";
     }
   } else {
-    document.getElementById("joinbutton").textContent = "invalid email :(";
+    joinbutton.textContent = "invalid email :(";
   }
 });
 

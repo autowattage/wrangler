@@ -1,3 +1,6 @@
+// notes to self
+// starts when code detected in browser
+// returns a session cookie for browser to verify themselves as
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({
@@ -9,7 +12,7 @@ export default async function handler(req, res) {
 
   try {
     //exchange for toknes
-    const response = await fetch(
+    const tokenfetch = await fetch(
       "https://auth.hackclub.com/oauth/token",
       {
         method: "POST",
@@ -24,19 +27,21 @@ export default async function handler(req, res) {
         headers: { "Content-type": "application/x-www-form-urlencoded" }
       }
     );
-    
-    const data = await response.json();
+    const tokendata = await tokenfetch.json();
+    if (!tokenfetch.ok || !tokendata.access_token) { return res.status(tokenfetch.status).json(tokendata); }
 
-    if (!response.ok) {
-      return res.status(response.status).json(data);
-    }
+    // validate tokens w/ userinfo
+    const userfetch = await fetch("https://auth.hackclub.com/oauth/userinfo",
+      { headers: { "Authorization": `Bearer ${tokendata.access_token}` } }
+    );
+    const userdata = await userfetch.json();
+    if (!userfetch.ok ) { return res.status(userfetch.status).json(userdata); }
 
-    return res.status(200).json(data);
-
-  } catch (error) {
-    return res.status(500).json({
-      error: error.message
-    });
+    // ok, return tokens as variables
+    return res.status(200).json(tokendata);
+  }
+  catch (error) {
+    return res.status(500).json({error: error.message});
   }
 }
 
