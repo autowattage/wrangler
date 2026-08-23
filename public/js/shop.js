@@ -4,11 +4,10 @@ var stats = document.getElementById("stats");
 
 // logged into hack club auth
 if (code) {
-  console.log("yipper i got a code");
   stats.style.display = "flex";
 
-  // get/validate token
-  fetch("/api/token", {
+  // get stats
+  fetch("/api/getstats", {
     method: "POST",
     body: JSON.stringify({code: code}),
     headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -21,9 +20,12 @@ if (code) {
       return data;
     });
   }).then(data => {
-    // successful email get. Stats update time
-    console.log(data);
-
+    history.replaceState(null, "", window.location.pathname);
+    document.getElementById("stats-acc").textContent = data["Accepted hours"];
+    document.getElementById("stats-pend").textContent = data["Pending hours"];
+    document.getElementById("stats-add").textContent = data["Manual hours added"];
+    document.getElementById("stats-total").textContent = data["Shop hours"];
+    document.getElementById("stats-spent").textContent = data["Spent hours"];
   }).catch (error => {
     console.log(`im a token fetch error! ${error}`);
   })
@@ -34,7 +36,8 @@ const shopbuttons = document.getElementsByClassName("shopbutton");
 const popup = document.getElementById("confirm-popup");
 const purchase = popup.firstElementChild.lastElementChild.lastElementChild.lastElementChild;
 const exit = popup.firstElementChild.firstElementChild.lastElementChild;
-
+var category;
+var id;
 // shop button display
 for (const button of shopbuttons) {
   button.addEventListener("click", (event) => {
@@ -63,5 +66,22 @@ exit.addEventListener("click", (event) => { popup.style.display = "none"; });
 
 // purchase button
 purchase.addEventListener("click", (event) => {
-  console.log("bought");
+  console.log(`bought ${category} ${id}`);
+  fetch("/api/purchaseitem", {
+    method: "POST",
+    body: JSON.stringify({category: category, id: id}),
+    headers: {"Content-type": "application/json; charset=UTF-8"}
+  }).then(response => {
+    return response.json().then(data => {
+      if (!response.ok) {
+        console.log(`purchase failed with:`, data);
+        throw new Error(`HTTP error with status: ${response.status}`);
+      }
+      return data;
+    });
+  }).then(data => {
+    console.log(`yay ${JSON.stringify(data)}`);
+  }).catch (error => {
+    console.log(`im a purchase error! ${error}`);
+  })
 });

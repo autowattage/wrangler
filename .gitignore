@@ -2,3 +2,5 @@ _site
 _site/*
 .vercel
 .env*
+node_modules
+node_modules/*

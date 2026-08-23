@@ -39,7 +39,8 @@ header {
         margin: 0 0.5rem 0.75rem;
         position: relative;
         p { margin-left: 0.5rem;}
-        span::before { all: unset; }
+        span { padding: 0; }
+        span::before { all: unset;}
         &::before {
             content:""; display: block;
             width: 0.75rem; height: 0.75rem;
