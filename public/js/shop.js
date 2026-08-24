@@ -73,7 +73,7 @@ if (code) { getstats(); }
 if (code) {
   for (const button of shopbuttons) { button.addEventListener("click", show_popup); }
 } else {
-  for (const button of shopbuttons) { button.onclick = function () { location.href="https://auth.hackclub.com/oauth/authorize?client_id=21c885509412e982827ce79b44cb1904&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fshop%2F&response_type=code&scope=openid+email+verification_status"; }}
+  for (const button of shopbuttons) { button.onclick = function () { location.href="https://auth.hackclub.com/oauth/authorize?client_id=21c885509412e982827ce79b44cb1904&redirect_uri=https%3A%2F%2Fwrangler-git-shop-test-branch.hackclub.dev%2Fshop%2F&response_type=code&scope=openid+email+verification_status"; }}
 }
 // clicking ouside box
 popup.addEventListener("click", (event) => { if (!event.target.closest('details')) { popup.style.display = "none";} });
