@@ -25,7 +25,7 @@ export default async function handler(req, res) {
           body: new URLSearchParams({
             "client_id": process.env.HACKCLUB_CLIENT_ID,
             "client_secret": process.env.HACKCLUB_CLIENT_SECRET,
-            "redirect_uri": "https://wrangler-git-shop-test-branch.hackclub.dev/shop/",
+            "redirect_uri": "https://wrangler.hackclub.com/shop/",
             "code": code,
             "grant_type": "authorization_code"
           }),
