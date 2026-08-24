@@ -64,7 +64,7 @@
         <p id="popup-1">loading...</p>
         <table><tbody>
           <tr>
-            <td>50 hours</td>
+            <td id="popup_hours">50 hours</td>
             <td>Your balance</td>
           </tr>
           <tr>
@@ -72,7 +72,7 @@
             <td>Price</td>
           </tr>
           <tr>
-            <td>40 hours</td>
+            <td id="popup_remaining">40 hours</td>
             <td>Remaining</td>
           </tr>
         </tbody></table>
@@ -86,5 +86,6 @@
 <script>
   const shopitems = {{ shopitems | dump | safe }}
 </script>
-<script src="/js/shop.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.2.0/dist/confetti.min.js"></script>
+<script type="module" src="/js/shop.js"></script>
 {% endblock %}

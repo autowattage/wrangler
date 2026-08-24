@@ -22,6 +22,7 @@
   "homepage": "https://github.com/autowattage/wrangler#readme",
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
+    "@hiseb/confetti": "^2.2.0",
     "airtable": "^0.12.2"
   }
 }
