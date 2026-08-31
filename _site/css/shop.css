@@ -24,11 +24,11 @@ header {
     }
     >a:last-child {
       display: block; margin: 0 auto; text-align: center;
-      width: auto; background-color: var(--light-gray); color: var(--black) !important;
+      width: auto; background-color: var(--blue); color: var(--black) !important;
       font-size: 1rem; width: calc(100% - 1rem); margin: 0 0.5rem 0.5rem; box-sizing: border-box;
       border: none; border-radius: 0.5rem; padding: 0.5rem 1rem;
-      &:hover { background-color: color-mix(in srgb, var(--light-gray), var(--white) 50%);}
-      &:active{ background-color: color-mix(in srgb, var(--light-gray), var(--gray) 50%);}
+      &:hover { background-color: color-mix(in srgb, var(--light-blue), var(--blue) 50%);}
+      &:active{ background-color: color-mix(in srgb, var(--dark-blue), var(--blue) 75%);}
     }
   }
   details[open] summary { border-radius: 0.5rem 0.5rem 0 0; margin-bottom: 0.5rem;}

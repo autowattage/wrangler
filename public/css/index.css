@@ -161,10 +161,10 @@ main {
         }
         button {
           padding: 0.25rem 1rem; cursor: pointer;
-          background-color: var(--light-gray);
-          border-radius: 0.25rem; border: 2px solid var(--gray);
-          &:hover { background-color: var(--white); }
-          &:active { background-color: var(--gray); border-color: var(--dark-gray); }
+          background-color: var(--blue);
+          border-radius: 0.25rem; border: 2px solid var(--dark-blue);
+          &:hover { background-color: color-mix(in srgb, var(--light-blue), var(--blue) 50%); }
+          &:active { background-color: color-mix(in srgb, var(--dark-blue), var(--blue) 75%); }
         }
         
       }
