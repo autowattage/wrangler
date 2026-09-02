@@ -6,7 +6,7 @@
       "/img/shop/eraser.png",
       "A gray kneadable eraser in a small transparent box",
       [],
-      [2, 2, 2, 3]
+      [2, 2, 2, 1.5, 3]
     ],
     [
       "Zebra M-301 Mechanical Pencils (x2)",
@@ -14,7 +14,7 @@
       "/img/shop/pencil.png",
       "A paper sleeve containing two silver and black mechanical pencils",
       [],
-      [2.5, 3.5, 3, 4]
+      [2.5, 3.5, 3, 5, 4]
     ],
     [
       "Uni Kuru Toga Mechanical Pencil",
@@ -22,7 +22,7 @@
       "/img/shop/kurutoga.png",
       "A silver mechanical pencil",
       [],
-      [3.5, 4.5, 4, 5.5]
+      [3.5, 4.5, 4, 3.5, 5.5]
     ],
     [
       "PILOT Kakuno Fountain Pen - Medium nib",
@@ -30,15 +30,15 @@
       "/img/shop/kakuno.png",
       "A clear fountain pen",
       [],
-      [3.5, 4.5, 4, 5.5]
+      [3.5, 4.5, 4, 3.5, 5.5]
     ],
     [
       "Strathmore Sketch 400 Sketchbook",
-      "Measures 5.5 x 8.5 inches and has 100 sheets!<br>Canson XL Series Drawing sketchbook, 60 sheets)<br>(Asia: Midori MD Blank A5 Sketchbook, 88 sheets)",
+      "Measures 5.5 x 8.5 inches and has 100 sheets!<br>(EU, IN: Canson XL Series Drawing sketchbook, 60 sheets)<br>(Asia: Midori MD Blank A5 Sketchbook, 88 sheets)",
       "/img/shop/sketchbook.png",
       "A brown spiral sketchbook",
       [],
-      [4, 5, 5, 6]
+      [4, 5, 5, 5, 6]
     ],
     [
       "Sakura Cray-Pas Expressionist Oil Pastels (x25)",
@@ -46,7 +46,7 @@
       "/img/shop/oils.png",
       "A tray of colorful oil pastels",
       [],
-      [6, 7, 6, 9]
+      [6, 7, 6, 5, 9]
     ],
     [
       "Sakura Pigma Micron 005-08 set (x6)",
@@ -54,7 +54,7 @@
       "/img/shop/microns.png",
       "A red box of 6 microns",
       [],
-      [7, 8, 7, 10.5]
+      [7, 8, 7, 8, 10.5]
     ],
     [
       "Prismacolor Premier Colored Pencils (x24)",
@@ -62,7 +62,7 @@
       "/img/shop/prismacolors.png",
       "Top box design of a Prismacolor Premier colored pencils set",
       [],
-      [8, 9, 12, 12]
+      [8, 9, 12, 10, 12]
     ],
     [
       "Ohuhu Alcohol Marker set (x48)",
@@ -70,7 +70,7 @@
       "/img/shop/alcohol.png",
       "A transparent box with multiple alcohol markers inside",
       [],
-      [10, 13, 10, 15]
+      [10, 13, 10, 8, 15]
     ],
     [
       "Posca Acrylic Paint Markers (x16)",
@@ -78,17 +78,17 @@
       "/img/shop/posca.png",
       "A transparent box with colorful paint markers inside",
       [],
-      [12, 13, 10, 16]
+      [12, 13, 10, 12, 16]
     ]
   ],
   "Digital": [
     [
       "Huion artist drawing glove",
-      "You should start washing your art gloves..",
+      "You should start washing your art gloves..<br>(IN: XP-Pen artist drawing glove)",
       "/img/shop/glove.png",
       "Hand with a black drawing glove",
       [],
-      [3, 4, 4, 4.5]
+      [3, 4, 4, 3, 4.5]
     ],
     [
       "Apple Pencil tips (x4)",
@@ -96,7 +96,7 @@
       "/img/shop/tips.png",
       "Four Apple pencil tips",
       [],
-      [5, 6, 7, 7.5]
+      [5, 6, 7, 5, 7.5]
     ],
     [
       "Aseprite License",
@@ -104,7 +104,7 @@
       "/img/shop/aseprite.png",
       "Aseprite logo",
       [],
-      [6, 6, 6, 6]
+      [6, 6, 6, 6, 6]
     ],
     [
       "XPPen ACK05 Wireless Shortcut Keyboard",
@@ -112,7 +112,7 @@
       "/img/shop/xpkeyboard.png",
       "A black macropad with a dial and 10 buttons",
       [],
-      [10, 15, 15, 18]
+      [10, 15, 15, 12, 18]
     ],
     [
       "Clip Studio Paint PRO v5 License",
@@ -120,7 +120,7 @@
       "/img/shop/csp.png",
       "Clip Studio Paint Pro v5 box",
       [],
-      [10, 10, 10, 10]
+      [10, 10, 10, 10, 10]
     ],
     [
       "XP-Pen Deco MW Drawing Tablet",
@@ -128,7 +128,7 @@
       "/img/shop/decomw.png",
       "A black screenless drawing tablet with 8 gray buttons on the side",
       [],
-      [16, 18, 22, 24]
+      [16, 18, 22, 17, 24]
     ],
     [
       "Huion New Kamvas 13 (Gen 3)",
@@ -136,7 +136,7 @@
       "/img/shop/kamvas.png",
       "A black screenless drawing tablet with 8 gray buttons on the side",
       ["Cosmo Black", "Sakura Pink"],
-      [50, 67, 65, 70]
+      [50, 67, 65, 57, 70]
     ]
   ],
 
@@ -147,7 +147,7 @@
       "/img/shop/requestdigital.png",
       "A white rabbit with a blue bucket hat and yellow bowtie draws on a tablet",
       [],
-      [0.5, 0.5, 0.5, 0.5]
+      [0.5, 0.5, 0.5, 0.5, 0.5]
     ],
     [
       "Wrangler stickers (x3)",
@@ -155,7 +155,7 @@
       "/img/shop/stickers.png",
       "Three circular stickers of red, yellow, and blue adaptor-shaped robots",
       [],
-      [1, 1, 1, 1]
+      [1, 1, 1, 1, 1]
     ],
     [
       "Vograce grant (5USD)",
@@ -163,7 +163,7 @@
       "/img/shop/vograce.png",
       "Three circular stickers of red, yellow, and blue adaptor-shaped robots",
       [],
-      [1, 1, 1, 1]
+      [1, 1, 1, 1, 1]
     ],
     [
       "BLICK grant (5USD)",
@@ -171,7 +171,7 @@
       "/img/shop/blick.png",
       "BLICK in uppercase black text",
       [],
-      [1, 1, 1, 1]
+      [1, 1, 1, 1, 1]
     ],
     [
       "Hardware grant (5USD)",
@@ -179,7 +179,7 @@
       "/img/shop/hardware.png",
       "A white bunny with a blue bucket hat stares longingly at a PCB",
       [],
-      [1, 1, 1, 1]
+      [1, 1, 1, 1, 1]
     ],
     [
       "Wrangler papercraft postcard",
@@ -187,7 +187,7 @@
       "/img/shop/postcard.png",
       "Papercraft design of an artist palette",
       [],
-      [2, 2, 2, 2]
+      [2, 2, 2, 2, 2]
     ],
     [
       "Doodle request (physical)",
@@ -195,7 +195,7 @@
       "/img/shop/request.png",
       "A white rabbit with a blue bucket hat and yellow bowtie draws on a sheet of paper",
       [],
-      [2, 2, 2, 2]
+      [2, 2, 2, 2, 2]
     ],
     [
       "HQ-signed hoodie",
@@ -203,7 +203,7 @@
       "/img/shop/hoodie.png",
       "A white rabbit with a blue bucket hat wears a white hoodie with multiple doodles and signatures.",
       [],
-      [6, 9, 9, 15]
+      [6, 9, 9, 9, 12]
     ]
     
   ]

@@ -13,6 +13,7 @@
       <label><input type="radio" name="country" value="USA" checked>USA</label>
       <label><input type="radio" name="country" value="CA">CA</label>
       <label><input type="radio" name="country" value="EU">EU</label>
+      <label><input type="radio" name="country" value="IN">IN</label>
       <label><input type="radio" name="country" value="INT">International</label>
     </div>
     <!-- <a>Shop is temporarily closed!</a> -->
@@ -50,7 +51,7 @@
         <img src="{{ shopitem[2] }}" alt="{{ shopitem[3] }}">
         <figcaption>
           <p>{{ shopitem[1] }}</p>
-          {% set regions = ["USA", "CA", "EU", "INT"] %}
+          {% set regions = ["USA", "CA", "EU", "IN", "INT"] %}
           {% for i in range(0, 4) %}
           <button class="{{ regions[i] }} shopbutton" type="button" data-item-price="{{ shopitem[5][i] }}" data-item-category="{{ section }}" data-item-id="{{ loop.index0 }}">{{ shopitem[5][i] }} hour{% if shopitem[5][i] != 1 %}s{% endif %}</button>
           {% endfor %}
