@@ -7,10 +7,15 @@ const purchase = popup.firstElementChild.lastElementChild.lastElementChild.lastE
 const exit = popup.firstElementChild.firstElementChild.lastElementChild;
 var category;
 var id;
+var price;
+var region;
 
 function show_popup(event) {
   category = event.target.getAttribute("data-item-category");
   id = event.target.getAttribute("data-item-id");
+  price = event.target.getAttribute("data-item-price");
+  region = event.target.classList[0];
+  console.log(`i'm in ${region}`);
 
   popup.style.display = "flex";
   document.getElementById("popup-0").textContent = shopitems[category][id][0];
@@ -22,10 +27,10 @@ function show_popup(event) {
   } else {
     document.getElementById("popup-4").style.display = "none";
   }
-  document.getElementById("popup-5").textContent = `-\xa0\xa0\xa0\xa0${shopitems[category][id][5]} ${shopitems[category][id][5] === 1 ? 'hour\xa0\xa0' : 'hours'}`;
+  document.getElementById("popup-5").textContent = `-\xa0\xa0\xa0\xa0${price} ${price === 1 ? 'hour\xa0\xa0' : 'hours'}`;
   document.getElementById("popup_hours").textContent = '\xa0\xa0\xa0\xa0' + document.getElementById("stats-total").textContent + ' hour' + (Number(document.getElementById("stats-total").textContent) === 1 ? "\xa0\xa0" : "s");
-  document.getElementById("popup_remaining").textContent = Number(document.getElementById("stats-total").textContent) - shopitems[category][id][5] + ' hour' + ((Number(document.getElementById("stats-total").textContent) - shopitems[category][id][5]) === 1 ? "\xa0\xa0" : "s");
-  document.getElementById("submit").value = `Purchase for ${shopitems[category][id][5]} ${shopitems[category][id][5] === 1 ? 'hour\xa0\xa0' : 'hours'}`;
+  document.getElementById("popup_remaining").textContent = Number(document.getElementById("stats-total").textContent) - price + ' hour' + ((Number(document.getElementById("stats-total").textContent) - price) === 1 ? "\xa0\xa0" : "s");
+  document.getElementById("submit").value = `Purchase for ${price} ${price === 1 ? 'hour\xa0\xa0' : 'hours'}`;
 }
 
 async function getstats() {
@@ -54,8 +59,8 @@ async function getstats() {
     for (const button of shopbuttons) {
       category = button.getAttribute("data-item-category");
       id = button.getAttribute("data-item-id");
-      // if (shopitems)
-      if (shopitems[category][id][5] > data["Shop hours"]) {
+      price = button.getAttribute("data-item-price");
+      if (price > data["Shop hours"]) {
         button.style.backgroundColor = "var(--black)";
         button.style.color = "var(--light-gray)";
         button.style.cursor = "auto";
@@ -82,10 +87,11 @@ exit.addEventListener("click", (event) => { popup.style.display = "none"; });
 
 // purchase button
 purchase.addEventListener("click", (event) => {
+  console.log(`buying ${category} ${id} for ${price} at ${region}`);
   // add to shop queue
   fetch("/api/purchaseitem", {
     method: "POST",
-    body: JSON.stringify({category: category, id: id}),
+    body: JSON.stringify({category: category, id: id, price: price, region: region}),
     headers: {"Content-type": "application/json; charset=UTF-8"}
   }).then(response => {
     return response.json().then(data => {
@@ -109,12 +115,13 @@ purchase.addEventListener("click", (event) => {
     fade: true
   });
   popup.style.display = "none";
-  document.getElementById("stats-total").textContent = Number(document.getElementById("stats-total").textContent) - shopitems[category][id][5];
-  document.getElementById("stats-spent").textContent = Number(document.getElementById("stats-spent").textContent) + shopitems[category][id][5];
+  document.getElementById("stats-total").textContent = Number(document.getElementById("stats-total").textContent) - price;
+  document.getElementById("stats-spent").textContent = Number(document.getElementById("stats-spent").textContent) + price;
   for (const button of shopbuttons) {
     category = button.getAttribute("data-item-category");
     id = button.getAttribute("data-item-id");
-    if (shopitems[category][id][5] > Number(document.getElementById("stats-total").textContent)) {
+    price = button.getAttribute("data-item-price");
+    if (price > Number(document.getElementById("stats-total").textContent)) {
       button.style.backgroundColor = "var(--black)";
       button.style.color = "var(--light-gray)";
       button.style.cursor = "auto";

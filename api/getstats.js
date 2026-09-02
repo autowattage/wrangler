@@ -26,6 +26,7 @@ export default async function handler(req, res) {
             "client_id": process.env.HACKCLUB_CLIENT_ID,
             "client_secret": process.env.HACKCLUB_CLIENT_SECRET,
             "redirect_uri": "https://wrangler.hackclub.com/shop/",
+            // "redirect_uri": "http://localhost:3000/shop/",
             "code": code,
             "grant_type": "authorization_code"
           }),

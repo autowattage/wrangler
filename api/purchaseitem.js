@@ -12,16 +12,17 @@ export default async function handler(req, res) {
 
   const session = getSession(req);
   if (!session) { return res.status(401).json({ error: "not logged in" }); }
-  const { category, id, hours } = req.body;
+  const { category, id, price, region } = req.body;
 
   try {
-    console.log(id);
+    console.log(`buying ${category} ${id} for ${price} in ${region}`);
 
     var record = await base(process.env.AIRTABLE_SHOP).create(
     [{
       "fields": {
         "Item": shopitems[category][id][0],
-        "Cost": shopitems[category][id][5],
+        "Cost": Number(price),
+        "Region": region,
         "Email": session.email
       }
     }])

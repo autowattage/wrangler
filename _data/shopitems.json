@@ -6,15 +6,15 @@
       "/img/shop/eraser.png",
       "A gray kneadable eraser in a small transparent box",
       [],
-      1
+      [2, 2, 2, 3]
     ],
     [
       "Zebra M-301 Mechanical Pencils (x2)",
-      "0.5mm lead is the superior option! Fight me!",
+      "0.5mm lead is the superior option! Fight me!<br>(Asia: Zebra Z-Grip MP-052 0.5mm Mechanical Pencil)",
       "/img/shop/pencil.png",
       "A paper sleeve containing two silver and black mechanical pencils",
       [],
-      1.5
+      [2.5, 3.5, 3, 4]
     ],
     [
       "Uni Kuru Toga Mechanical Pencil",
@@ -22,23 +22,23 @@
       "/img/shop/kurutoga.png",
       "A silver mechanical pencil",
       [],
-      2.5
+      [3.5, 4.5, 4, 5.5]
     ],
     [
       "PILOT Kakuno Fountain Pen - Medium nib",
-      "A 0.5mm fountain pen with a smiley face on its nib!",
+      "A 0.5mm fountain pen with a smiley face on its nib!<br>(EU: Helix Oxford Premium Fountain Pen)",
       "/img/shop/kakuno.png",
       "A clear fountain pen",
       [],
-      2.5
+      [3.5, 4.5, 4, 5.5]
     ],
     [
       "Strathmore Sketch 400 Sketchbook",
-      "Measures 5.5 x 8.5 inches and has 100 sheets! + comes with a doodle!",
+      "Measures 5.5 x 8.5 inches and has 100 sheets!<br>Canson XL Series Drawing sketchbook, 60 sheets)<br>(Asia: Midori MD Blank A5 Sketchbook, 88 sheets)",
       "/img/shop/sketchbook.png",
       "A brown spiral sketchbook",
       [],
-      3
+      [4, 5, 5, 6]
     ],
     [
       "Sakura Cray-Pas Expressionist Oil Pastels (x25)",
@@ -46,7 +46,7 @@
       "/img/shop/oils.png",
       "A tray of colorful oil pastels",
       [],
-      5
+      [6, 7, 6, 9]
     ],
     [
       "Sakura Pigma Micron 005-08 set (x6)",
@@ -54,15 +54,15 @@
       "/img/shop/microns.png",
       "A red box of 6 microns",
       [],
-      6
+      [7, 8, 7, 10.5]
     ],
     [
       "Prismacolor Premier Colored Pencils (x24)",
-      "Butter smooth colored pencils! Great for blending!",
+      "Butter smooth colored pencils! Great for blending!<br>(CA: Prismacolor Scholar Coloured Pencils x24)<br>(Asia: Faber-Castell 24 Classic Colored Pencils)",
       "/img/shop/prismacolors.png",
       "Top box design of a Prismacolor Premier colored pencils set",
       [],
-      6
+      [8, 9, 12, 12]
     ],
     [
       "Ohuhu Alcohol Marker set (x48)",
@@ -70,15 +70,15 @@
       "/img/shop/alcohol.png",
       "A transparent box with multiple alcohol markers inside",
       [],
-      8
+      [10, 13, 10, 15]
     ],
     [
       "Posca Acrylic Paint Markers (x16)",
-      "Crispy and vibrant paint markers!",
+      "Crispy and vibrant paint markers!<br>(EU: x12 set)<br>(CA: x15 set)",
       "/img/shop/posca.png",
       "A transparent box with colorful paint markers inside",
       [],
-      10
+      [12, 13, 10, 16]
     ]
   ],
   "Digital": [
@@ -88,7 +88,7 @@
       "/img/shop/glove.png",
       "Hand with a black drawing glove",
       [],
-      2
+      [3, 4, 4, 4.5]
     ],
     [
       "Apple Pencil tips (x4)",
@@ -96,7 +96,7 @@
       "/img/shop/tips.png",
       "Four Apple pencil tips",
       [],
-      4
+      [5, 6, 7, 7.5]
     ],
     [
       "Aseprite License",
@@ -104,7 +104,7 @@
       "/img/shop/aseprite.png",
       "Aseprite logo",
       [],
-      6
+      [6, 6, 6, 6]
     ],
     [
       "XPPen ACK05 Wireless Shortcut Keyboard",
@@ -112,7 +112,7 @@
       "/img/shop/xpkeyboard.png",
       "A black macropad with a dial and 10 buttons",
       [],
-      8
+      [10, 15, 15, 18]
     ],
     [
       "Clip Studio Paint PRO v5 License",
@@ -120,15 +120,15 @@
       "/img/shop/csp.png",
       "Clip Studio Paint Pro v5 box",
       [],
-      10
+      [10, 10, 10, 10]
     ],
     [
       "XP-Pen Deco MW Drawing Tablet",
-      "A bluetooth drawing tablet that can connect to your phone?!",
+      "A bluetooth drawing tablet that can connect to your phone?<br>(CA: Huion Inspiroy 2S)<br>(Asia: Wacom Intuos Pro Small)",
       "/img/shop/decomw.png",
       "A black screenless drawing tablet with 8 gray buttons on the side",
       [],
-      15
+      [16, 18, 22, 24]
     ],
     [
       "Huion New Kamvas 13 (Gen 3)",
@@ -136,18 +136,26 @@
       "/img/shop/kamvas.png",
       "A black screenless drawing tablet with 8 gray buttons on the side",
       ["Cosmo Black", "Sakura Pink"],
-      40
+      [50, 67, 65, 70]
     ]
   ],
 
   "Goodies": [
+    [
+      "Doodle request (digital)",
+      "A quick 30-second doodle request!",
+      "/img/shop/requestdigital.png",
+      "A white rabbit with a blue bucket hat and yellow bowtie draws on a tablet",
+      [],
+      [0.5, 0.5, 0.5, 0.5]
+    ],
     [
       "Wrangler stickers (x3)",
       "All three wranglers, all together!",
       "/img/shop/stickers.png",
       "Three circular stickers of red, yellow, and blue adaptor-shaped robots",
       [],
-      1
+      [1, 1, 1, 1]
     ],
     [
       "Vograce grant (5USD)",
@@ -155,7 +163,7 @@
       "/img/shop/vograce.png",
       "Three circular stickers of red, yellow, and blue adaptor-shaped robots",
       [],
-      1
+      [1, 1, 1, 1]
     ],
     [
       "BLICK grant (5USD)",
@@ -163,7 +171,7 @@
       "/img/shop/blick.png",
       "BLICK in uppercase black text",
       [],
-      1
+      [1, 1, 1, 1]
     ],
     [
       "Hardware grant (5USD)",
@@ -171,7 +179,7 @@
       "/img/shop/hardware.png",
       "A white bunny with a blue bucket hat stares longingly at a PCB",
       [],
-      1
+      [1, 1, 1, 1]
     ],
     [
       "Wrangler papercraft postcard",
@@ -179,15 +187,15 @@
       "/img/shop/postcard.png",
       "Papercraft design of an artist palette",
       [],
-      2
+      [2, 2, 2, 2]
     ],
     [
-      "Doodle request!",
+      "Doodle request (physical)",
       "Get a postcard-sized doodle drawn by me!",
       "/img/shop/request.png",
       "A white rabbit with a blue bucket hat and yellow bowtie draws on a sheet of paper",
       [],
-      2
+      [2, 2, 2, 2]
     ],
     [
       "HQ-signed hoodie",
@@ -195,7 +203,7 @@
       "/img/shop/hoodie.png",
       "A white rabbit with a blue bucket hat wears a white hoodie with multiple doodles and signatures.",
       [],
-      6
+      [6, 9, 9, 15]
     ]
     
   ]
