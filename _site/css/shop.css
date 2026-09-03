@@ -2,6 +2,7 @@ body, section, header { display: flex; flex-direction: column; gap: 1rem; paddin
 body:has(input[value="USA"]:checked) .USA,
 body:has(input[value="CA"]:checked) .CA,
 body:has(input[value="EU"]:checked) .EU,
+body:has(input[value="IN"]:checked) .IN,
 body:has(input[value="INT"]:checked) .INT {
   display: block;
 }
