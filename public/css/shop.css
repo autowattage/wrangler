@@ -3,6 +3,7 @@ body:has(input[value="USA"]:checked) .USA,
 body:has(input[value="CA"]:checked) .CA,
 body:has(input[value="EU"]:checked) .EU,
 body:has(input[value="IN"]:checked) .IN,
+body:has(input[value="ASIA"]:checked) .ASIA,
 body:has(input[value="INT"]:checked) .INT {
   display: block;
 }
