@@ -15,7 +15,7 @@ function show_popup(event) {
   id = event.target.getAttribute("data-item-id");
   price = event.target.getAttribute("data-item-price");
   region = event.target.classList[0];
-  console.log(`i'm in ${region}`);
+  console.log(`i'm buying ${category} ${id} for ${price} in ${region}`);
 
   popup.style.display = "flex";
   document.getElementById("popup-0").textContent = shopitems[category][id][0];

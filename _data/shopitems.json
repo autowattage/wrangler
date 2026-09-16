@@ -6,7 +6,7 @@
       "/img/shop/eraser.png",
       "A gray kneadable eraser in a small transparent box",
       [],
-      [2, 2, 2, 1.5, 1.5, 3]
+      [2, 2, 2, 1.5, 1.5, 4]
     ],
     [
       "Zebra M-301 Mechanical Pencils (x2)",
@@ -14,7 +14,7 @@
       "/img/shop/pencil.png",
       "A paper sleeve containing two silver and black mechanical pencils",
       [],
-      [2.5, 3.5, 3, 5, 2.5, 4]
+      [2.5, 3.5, 3, 5, 2.5, 5]
     ],
     [
       "Uni Kuru Toga Mechanical Pencil",
@@ -22,7 +22,7 @@
       "/img/shop/kurutoga.png",
       "A silver mechanical pencil",
       [],
-      [3.5, 4.5, 4, 3.5, 3.5, 5.5]
+      [3.5, 4.5, 4, 3.5, 3.5, 6.5]
     ],
     [
       "PILOT Kakuno Fountain Pen - Medium nib",
@@ -30,7 +30,7 @@
       "/img/shop/kakuno.png",
       "A clear fountain pen",
       [],
-      [3.5, 4.5, 4, 3.5, 3.5, 5.5]
+      [3.5, 4.5, 4, 3.5, 3.5, 6.5]
     ],
     [
       "Strathmore Sketch 400 Sketchbook",
@@ -38,7 +38,7 @@
       "/img/shop/sketchbook.png",
       "A brown spiral sketchbook",
       [],
-      [4, 5, 5, 5, 5, 6]
+      [4, 5, 5, 5, 5, 7]
     ],
     [
       "Sakura Cray-Pas Expressionist Oil Pastels (x25)",
@@ -46,7 +46,7 @@
       "/img/shop/oils.png",
       "A tray of colorful oil pastels",
       [],
-      [6, 7, 6, 5, 5, 9]
+      [6, 7, 6, 5, 5, 10]
     ],
     [
       "Sakura Pigma Micron 005-08 set (x6)",
@@ -54,7 +54,7 @@
       "/img/shop/microns.png",
       "A red box of 6 microns",
       [],
-      [7, 8, 7, 8, 6, 10.5]
+      [7, 8, 7, 8, 6, 11.5]
     ],
     [
       "Prismacolor Premier Colored Pencils (x24)",
@@ -62,7 +62,7 @@
       "/img/shop/prismacolors.png",
       "Top box design of a Prismacolor Premier colored pencils set",
       [],
-      [8, 9, 12, 10, 8, 12]
+      [8, 9, 12, 10, 8, 13]
     ],
     [
       "Ohuhu Alcohol Marker set (x48)",
@@ -70,7 +70,7 @@
       "/img/shop/alcohol.png",
       "A transparent box with multiple alcohol markers inside",
       [],
-      [10, 13, 10, 8, 11, 15]
+      [10, 13, 10, 8, 11, 16]
     ],
     [
       "Posca Acrylic Paint Markers (x16)",
@@ -78,7 +78,7 @@
       "/img/shop/posca.png",
       "A transparent box with colorful paint markers inside",
       [],
-      [12, 13, 10, 12, 12, 16]
+      [12, 13, 10, 12, 12, 17]
     ]
   ],
   "Digital": [
@@ -88,7 +88,7 @@
       "/img/shop/glove.png",
       "Hand with a black drawing glove",
       [],
-      [3, 4, 4, 3, 3, 4.5]
+      [3, 4, 4, 3, 3, 5.5]
     ],
     [
       "Apple Pencil tips (x4)",
@@ -96,7 +96,7 @@
       "/img/shop/tips.png",
       "Four Apple pencil tips",
       [],
-      [5, 6, 7, 5, 5, 7.5]
+      [5, 6, 7, 5, 5, 8.5]
     ],
     [
       "Aseprite License",
@@ -112,7 +112,7 @@
       "/img/shop/xpkeyboard.png",
       "A black macropad with a dial and 10 buttons",
       [],
-      [10, 15, 15, 12, 20, 20]
+      [10, 15, 15, 12, 20, 22]
     ],
     [
       "Clip Studio Paint PRO v5 License",
@@ -128,7 +128,7 @@
       "/img/shop/decomw.png",
       "A black screenless drawing tablet with 8 gray buttons on the side",
       [],
-      [16, 18, 22, 17, 18, 26]
+      [16, 18, 22, 17, 18, 28]
     ],
     [
       "Huion New Kamvas 13 (Gen 3)",
@@ -136,7 +136,7 @@
       "/img/shop/kamvas.png",
       "A black screenless drawing tablet with 8 gray buttons on the side",
       ["Cosmo Black", "Sakura Pink"],
-      [50, 67, 69, 55, 60, 72]
+      [50, 67, 69, 55, 60, 75]
     ]
   ],
 
@@ -203,7 +203,7 @@
       "/img/shop/hoodie.png",
       "A white rabbit with a blue bucket hat wears a white hoodie with multiple doodles and signatures.",
       [],
-      [6, 9, 9, 9, 12, 12]
+      [6, 9, 9, 9, 12, 15]
     ]
     
   ]
