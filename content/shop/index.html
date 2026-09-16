@@ -17,8 +17,8 @@
       <label><input type="radio" name="country" value="ASIA">Asia</label>
       <label><input type="radio" name="country" value="INT">International</label>
     </div>
-    <a>Shop is temporarily closed for debugging!</a>
-    <!-- <a href="https://auth.hackclub.com/oauth/authorize?client_id=21c885509412e982827ce79b44cb1904&redirect_uri=https%3A%2F%2Fwrangler.hackclub.com%2Fshop%2F&response_type=code&scope=openid+email+verification_status">Log in with Hack Club</a> -->
+    <!-- <a>Shop is temporarily closed for debugging!</a> -->
+    <a href="https://auth.hackclub.com/oauth/authorize?client_id=21c885509412e982827ce79b44cb1904&redirect_uri=https%3A%2F%2Fwrangler.hackclub.com%2Fshop%2F&response_type=code&scope=openid+email+verification_status">Log in with Hack Club</a>
     <!-- <a href="https://auth.hackclub.com/oauth/authorize?client_id=21c885509412e982827ce79b44cb1904&redirect_uri=https%3A%2F%2Fwrangler-git-shop-test-branch.hackclub.dev%2Fshop%2F&response_type=code&scope=openid+email+verification_status">Log in with Hack Club</a> -->
     <!-- <a href="https://auth.hackclub.com/oauth/authorize?client_id=21c885509412e982827ce79b44cb1904&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fshop%2F&response_type=code&scope=openid+email+verification_status">Log in with Hack Club</a> -->
   </details>
@@ -53,8 +53,9 @@
         <figcaption>
           <p>{{ shopitem[1] }}</p>
           {% set regions = ["USA", "CA", "EU", "IN", "ASIA", "INT"] %}
+          {% set id = loop.index0 %}
           {% for i in range(0, 6) %}
-          <button class="{{ regions[i] }} shopbutton" type="button" data-item-price="{{ shopitem[5][i] }}" data-item-category="{{ section }}" data-item-id="{{ loop.index0 }}">{{ shopitem[5][i] }} hour{% if shopitem[5][i] != 1 %}s{% endif %}</button>
+          <button class="{{ regions[i] }} shopbutton" type="button" data-item-price="{{ shopitem[5][i] }}" data-item-category="{{ section }}" data-item-id="{{ id }}">{{ shopitem[5][i] }} hour{% if shopitem[5][i] != 1 %}s{% endif %}</button>
           {% endfor %}
         </figcaption>
       </figure>

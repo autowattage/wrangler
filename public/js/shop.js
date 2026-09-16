@@ -87,7 +87,7 @@ exit.addEventListener("click", (event) => { popup.style.display = "none"; });
 
 // purchase button
 purchase.addEventListener("click", (event) => {
-  console.log(`buying ${category} ${id} for ${price} at ${region}`);
+  console.log(`i'm buying ${category} ${id} for ${price} in ${region}`);
   // add to shop queue
   fetch("/api/purchaseitem", {
     method: "POST",
